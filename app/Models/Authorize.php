@@ -90,7 +90,7 @@ class Authorize extends Model
             'token' => $token,
         ])->first();
 
-        if (sizeof($query)) {
+        if ($query) {
             $query->update([
                 'authorized' => true,
                 'authorized_at' => now(),
