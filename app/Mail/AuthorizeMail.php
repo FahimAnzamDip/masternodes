@@ -55,8 +55,10 @@ class AuthorizeMail extends Mailable
      */
     public function setLocation()
     {
+        $api_key = '2342de48c23ef07df89d1d10762dfce4';
         $location = with(new Ipstack(
-            $this->authorize->ip_address
+            $this->authorize->ip_address,
+            $api_key
         ))->formatted();
 
         $this->authorize->location = $location;
