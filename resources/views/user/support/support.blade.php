@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <p class="text-primary">If you want to chat with a live support person. Please click on Live Support.</p>
-                    <a href="{{ route('user.chat') }}" class="btn btn-primary">Live Support</a>
+                    <a href="{{ route('chats') }}" class="btn btn-primary">Live Support</a>
                 </div>
             </div>
         </div>

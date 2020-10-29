@@ -33,14 +33,18 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'Auth\AuthorizeController@resend',
     ]);
     //Live Chats
-
+    Route::get('/chats', 'ChatsController@index')->name('chats');
+    Route::get('/users', 'ChatsController@users');
+    Route::get('/user/messages/{id}', 'ChatsController@userMessages');
+    Route::post('/message/send', 'ChatsController@messageSend');
+    Route::get('/chats/delete/{id}', 'ChatsController@messagesDelete');
 });
 
 //User Middleware and Namespace
 Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namespace' => 'User'], function () {
     //User Dashboard
     Route::get('/user/home', 'UserHomeController@index')->name('user.home');
-    //Uesr Profile
+    //User Profile
     Route::get('/user/profile', 'UserHomeController@profile')->name('user.profile');
     Route::post('/user/profile/update', 'UserHomeController@profileUpdate')->name('user.profile.update');
     //2FA
@@ -49,8 +53,6 @@ Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namesp
     Route::get('/user/account-setting', 'UserHomeController@accountSetting')->name('user.account.setting');
     //Support
     Route::get('/user/support', 'UserHomeController@support')->name('user.support');
-    //Live Chats
-    Route::get('/user/chat', 'UserHomeController@chat')->name('user.chat');
 });
 
 //Admin Middleware and Namespace

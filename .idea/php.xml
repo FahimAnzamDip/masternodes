@@ -121,6 +121,7 @@
       <path value="$PROJECT_DIR$/vendor/sudiptpa/guid" />
       <path value="$PROJECT_DIR$/vendor/sudiptpa/ipstack" />
       <path value="$PROJECT_DIR$/vendor/cbschuld/browser.php" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

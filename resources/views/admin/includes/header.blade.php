@@ -79,6 +79,11 @@
                     <i class="fas fa-envelope"></i> Messages <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
                 </a>
             </li>
+            <li class="nav-item {{ request()->is('chat*') ? 'active' : '' }}">
+                <a href="{{ route('chats') }}" class="nav-link">
+                    <i class="fab fa-facebook-messenger"></i> Live Chat <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
+                </a>
+            </li>
         </ul>
 
     </aside>
