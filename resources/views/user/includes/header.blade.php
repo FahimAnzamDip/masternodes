@@ -82,7 +82,7 @@
 
                 <div class="dropdown-divider"></div>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="{{ route('user.support') }}" class="dropdown-item has-icon">
                     <i class="fas fa-hands-helping"></i> Support
                 </a>
 

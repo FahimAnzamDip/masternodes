@@ -45,7 +45,7 @@ class MessagesController extends Controller
             'email'      => 'required|email|max:255',
             'subject'    => 'required|max:255',
             'message'    => 'required',
-            'attachment' => 'nullable|image|mimes:jpg,jpeg,png|size:1024'
+            'attachment' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 
         if ($request->hasFile('attachment')) {

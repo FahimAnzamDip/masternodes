@@ -69,4 +69,20 @@ class UserHomeController extends Controller
             'title' => $title
         ]);
     }
+
+    public function support() {
+        $title = "MPP User - Support";
+
+        return view('user.support.support', [
+            'title' => $title
+        ]);
+    }
+
+    public function chat() {
+        $title = "MPP User - Chat";
+
+        return view('user.support.chat', [
+            'title' => $title
+        ]);
+    }
 }

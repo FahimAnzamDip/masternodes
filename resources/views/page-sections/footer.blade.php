@@ -120,7 +120,7 @@
         <div class="copyright-content row">
             <div class="col-lg-6">
                 <p class="copy__desc">
-                    Copyright &copy; {{ date('Y') }} by <a href="">Triangle Technology Ltd.</a>.
+                    Copyright &copy; {{ date('Y') }} by <a href="https://triangeltech.com/">Triangle Technology Ltd.</a>.
                 </p>
             </div>
             <!-- end col-lg-6 -->

@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'authorize.resend',
         'uses' => 'Auth\AuthorizeController@resend',
     ]);
+    //Live Chats
+
 });
 
 //User Middleware and Namespace
@@ -45,6 +47,10 @@ Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namesp
     Route::get('/user/twofactor', 'UserHomeController@twofactor')->name('user.twofactor');
     //Account Setting
     Route::get('/user/account-setting', 'UserHomeController@accountSetting')->name('user.account.setting');
+    //Support
+    Route::get('/user/support', 'UserHomeController@support')->name('user.support');
+    //Live Chats
+    Route::get('/user/chat', 'UserHomeController@chat')->name('user.chat');
 });
 
 //Admin Middleware and Namespace

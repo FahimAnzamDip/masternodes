@@ -76,7 +76,7 @@
             <li class="menu-header">Contact</li>
             <li class="nav-item {{ request()->is('messages*') ? 'active' : '' }}">
                 <a href="{{ route('messages.index') }}" class="nav-link">
-                    <i class="fas fa-envelope"></i> All Messages <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
+                    <i class="fas fa-envelope"></i> Messages <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
                 </a>
             </li>
         </ul>
