@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MessageSendEvent;
 use App\Models\Chat;
 use App\Models\User;
 use Carbon\Carbon;
@@ -72,6 +73,8 @@ class ChatsController extends Controller
             'created_at' => Carbon::now(),
             'type' => 1
         ]);
+
+        broadcast(new MessageSendEvent($message));
 
         return response()->json($message, 201);
     }

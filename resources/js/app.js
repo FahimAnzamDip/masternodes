@@ -3,14 +3,12 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuex from 'vuex';
+Vue.use(Vuex);
 
 window.moment = require('moment');
 
-import VueChatScroll from 'vue-chat-scroll'
-
-Vue.use(VueChatScroll)
-
-Vue.use(Vuex);
+import VueChatScroll from 'vue-chat-scroll';
+Vue.use(VueChatScroll);
 
 const store = new Vuex.Store({
     state: {

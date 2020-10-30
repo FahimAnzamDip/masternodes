@@ -17,7 +17,7 @@
         </div>
 
         <div class="section-body" id="app">
-            <chat-component :role="{{ Auth::user()->role }}"/>
+            <chat-component :role="{{ Auth::user() }}"/>
         </div>
     </section>
 @endsection
