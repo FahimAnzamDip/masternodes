@@ -20,6 +20,7 @@ class CreateChatsTable extends Migration
             $table->text('message')->nullable();
             $table->string('attachment')->nullable();
             $table->boolean('type')->nullable();
+            $table->boolean('read')->default(0);
             $table->timestamps();
         });
     }

@@ -10,6 +10,9 @@ window.moment = require('moment');
 import VueChatScroll from 'vue-chat-scroll';
 Vue.use(VueChatScroll);
 
+const VueUploadComponent = require('vue-upload-component')
+Vue.component('file-upload', VueUploadComponent)
+
 const store = new Vuex.Store({
     state: {
         users: [],

@@ -81,7 +81,7 @@
             </li>
             <li class="nav-item {{ request()->is('chat*') ? 'active' : '' }}">
                 <a href="{{ route('chats') }}" class="nav-link">
-                    <i class="fab fa-facebook-messenger"></i> Live Chat <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
+                    <i class="fab fa-facebook-messenger"></i> Live Chat <span class="badge badge-info ml-4" style="width: 2rem;">{{ \App\Models\Chat::where('read', 0)->where('receiver_id', Auth::user()->id)->where('type', 1)->count() }}</span>
                 </a>
             </li>
         </ul>

@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/users', 'ChatsController@users');
     Route::get('/user/messages/{id}', 'ChatsController@userMessages');
     Route::post('/message/send', 'ChatsController@messageSend');
+    Route::post('/message/image/send', 'ChatsController@messageImageSend');
     Route::get('/chats/delete/{id}', 'ChatsController@messagesDelete');
 });
 
