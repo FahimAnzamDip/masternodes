@@ -18,7 +18,7 @@
             <!-- end col-lg-8 -->
             <div class="col-lg-4">
                 <div class="blog-btn">
-                    <a href="blog-grid.html" class="theme-btn">view all news</a>
+                    <a href="{{ route('blog.page') }}" class="theme-btn">view all news</a>
                 </div>
                 <!-- end blog-btn -->
             </div>
@@ -26,111 +26,41 @@
         </div>
         <!-- end row -->
         <div class="row blog-post-wrapper">
-            <div class="col-lg-4">
-                <div class="blog-post-item">
-                    <div class="blog-post-img">
-                        <a href="blog-single.html">
-                            <img src="{{ asset('frontend') }}/images/blog-img1.jpg" alt="blog image" class="blog__img" />
-                        </a>
-                        <div class="blog__date">
-                            <span>01 jan 2019</span>
-                        </div>
-                        <!-- end blog__date -->
-                    </div>
-                    <!-- end blog-post-img -->
-                    <div class="blog-post-body">
-                        <div class="blog-title">
-                            <a href="blog-single.html" class="blog__title">
-                                How Cryptocurrency Begun and Its Impact To Financial
+            @forelse($posts as $post)
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog-post-item">
+                        <div class="blog-post-img">
+                            <a href="blog-single.html">
+                                <img src="{{ asset('storage/post_images') . '/' . $post->post_thumbnail }}" alt="blog image" class="blog__img">
                             </a>
-                        </div>
-                        <ul class="blog__panel">
-                            <li>
-                                <i class="fa fa-user"></i> By
-                                <a href="#" class="blog-admin-name">David wayse</a>
-                            </li>
-                            <li>
-                                <a href="blog-single.html" class="blog-admin-btn">
-                                    continue
+                            <div class="blog__date">
+                                <span>{{ $post->created_at->format('jS F Y') }}</span>
+                            </div><!-- end blog__date -->
+                        </div><!-- end blog-post-img -->
+                        <div class="blog-post-body">
+                            <div class="blog-title">
+                                <a href="{{ route('posts.show', $post->slug) }}" class="blog__title">
+                                    {{ $post->post_title }}
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end blog-post-body -->
+                            </div>
+                            <ul class="blog__panel">
+                                <li><i class="fa fa-user"></i> By
+                                    <a href="#" class="blog-admin-name">{{ $post->user->username }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('posts.show', $post->slug) }}" class="blog-admin-btn">
+                                        Continue
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!-- end blog-post-body -->
+                    </div><!-- end blog-post-item -->
+                </div><!-- end col-lg-4 -->
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-warning">No Post Available.</div>
                 </div>
-                <!-- end blog-post-item -->
-            </div>
-            <!-- end col-lg-4 -->
-            <div class="col-lg-4">
-                <div class="blog-post-item">
-                    <div class="blog-post-img">
-                        <a href="blog-single.html">
-                            <img src="{{ asset('frontend') }}/images/blog-img2.jpg" alt="blog image" class="blog__img" />
-                        </a>
-                        <div class="blog__date">
-                            <span>09 feb 2019</span>
-                        </div>
-                        <!-- end blog__date -->
-                    </div>
-                    <!-- end blog-post-img -->
-                    <div class="blog-post-body">
-                        <div class="blog-title">
-                            <a href="blog-single.html" class="blog__title">
-                                Cryptocurrency - Who Are Involved With It?
-                            </a>
-                        </div>
-                        <ul class="blog__panel">
-                            <li>
-                                <i class="fa fa-user"></i> By
-                                <a href="#" class="blog-admin-name">Mike doe</a>
-                            </li>
-                            <li>
-                                <a href="blog-single.html" class="blog-admin-btn">
-                                    continue
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end blog-post-body -->
-                </div>
-                <!-- end blog-post-item -->
-            </div>
-            <!-- end col-lg-4 -->
-            <div class="col-lg-4">
-                <div class="blog-post-item">
-                    <div class="blog-post-img">
-                        <a href="blog-single.html">
-                            <img src="{{ asset('frontend') }}/images/blog-img3.jpg" alt="blog image" class="blog__img" />
-                        </a>
-                        <div class="blog__date">
-                            <span>25 mar 2019</span>
-                        </div>
-                        <!-- end blog__date -->
-                    </div>
-                    <!-- end blog-post-img -->
-                    <div class="blog-post-body">
-                        <div class="blog-title">
-                            <a href="blog-single.html" class="blog__title">
-                                Risks & Rewards Of Investing In Bitcoin. Pros and Cons
-                            </a>
-                        </div>
-                        <ul class="blog__panel">
-                            <li>
-                                <i class="fa fa-user"></i> By
-                                <a href="#" class="blog-admin-name">Jhon doe</a>
-                            </li>
-                            <li>
-                                <a href="blog-single.html" class="blog-admin-btn">
-                                    continue
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end blog-post-body -->
-                </div>
-                <!-- end blog-post-item -->
-            </div>
-            <!-- end col-lg-4 -->
+            @endforelse
         </div>
         <!-- end row -->
     </div>

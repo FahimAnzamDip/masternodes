@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravelista\Comments\Commenter;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use HasFactory, Notifiable, TwoFactorAuthenticatable, Commenter;
 
     /**
      * The attributes that are mass assignable.
@@ -56,5 +57,13 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function chats() {
         return $this->hasMany(Chat::class);
+    }
+
+    public function categories() {
+        return $this->hasMany(Categories::class);
+    }
+
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 }

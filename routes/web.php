@@ -61,10 +61,24 @@ Route::group(['namespace' => 'Admin'], function () {
     //Contact Messages
     Route::get('messages/delete/{id}', 'MessagesController@delete')->name('messages.delete');
     Route::resource('messages', 'MessagesController')->except('create', 'edit', 'update', 'destroy');
+    //Posts
+    Route::get('/posts/draft', 'PostsController@draft')->name('posts.draft');
+    Route::get('/posts/checkSlug', 'PostsController@checkSlug')->name('posts.check.slug');
+    Route::get('/posts/delete/{id}', 'PostsController@delete')->name('posts.delete');
+    Route::resource('posts', 'PostsController')->except('destroy');
 
     Route::group(['middleware' => ['auth', 'admin']], function () {
         //Admin Dashboard
         Route::get('/admin/home', 'AdminHomeController@index')->name('admin.home');
+        //Post Categories
+        Route::get('/categories/delete/{id}', 'CategoriesController@delete')->name('categories.delete');
+        Route::resource('categories', 'CategoriesController')->except('show', 'destroy');
+        //Post Comments
+        Route::get('/comments', 'CommentsController@index')->name('comments.index');
+        Route::get('/comments/approve/{id}', 'CommentsController@approve')->name('comments.approve');
+        Route::get('/comments/disapprove/{id}', 'CommentsController@disapprove')->name('comments.disapprove');
+        Route::get('/comments/approved', 'CommentsController@approvedComments')->name('comments.approved');
+        Route::get('/comments/delete/{id}', 'CommentsController@delete')->name('comments.delete');
     });
 });
 

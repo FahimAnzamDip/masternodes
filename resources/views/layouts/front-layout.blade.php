@@ -68,6 +68,7 @@
 <script src="{{ asset('frontend') }}/js/jquery.counterup.min.js"></script>
 <script src="{{ asset('frontend') }}/js/smooth-scrolling.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8c896b1c1f1e22"></script>
 <script src="{{ asset('frontend') }}/js/main.js"></script>
 <script>
     $(document).on("click", "#logout", function (e) {

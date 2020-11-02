@@ -2,64 +2,12 @@
         START HEADER AREA
 ================================= -->
 <header class="header-area">
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="header-top-info">
-                        <ul class="info-list">
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <a href="mailto:example@gmail.com">example@gmail.com</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <a href="tel:+1631237884">+163 123 7884</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end header-top-info -->
-                </div>
-                <!-- end col-lg-6 -->
-                <div class="col-lg-6 col-sm-6">
-                    <div class="header-top-info header-login-info">
-                        <ul class="info-list">
-                            @guest
-                                <li>
-                                    <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('register') }}"><i class="fa fa-sign-in-alt"></i> Sign up</a>
-                                </li>
-                            @else
-                                <li>
-                                    <a href="{{ Auth::user()->role == 1 ? route('admin.home') : route('user.home') }}"><i class="fa fa-user"></i> {{ Auth::user()->username }}</a>
-                                </li>
-                                <li>
-                                    <a id="logout" href="#"><i class="fa fa-sign-in-alt"></i> Logout</a>
-
-                                    <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-                            @endguest
-                        </ul>
-                    </div>
-                    <!-- end header-top-info -->
-                </div>
-                <!-- end col-lg-6 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end header-top -->
     <div class="header-menu-wrapper">
         <div class="container">
             <div class="row header-menu-row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="{{ route('home.page') }}" style="color: #333333">
+                        <a href="{{ route('home.page') }}" style="color: #2d3748">
                             <h1 style="font-size: 2rem;" class="mt-1">MPP</h1>
                         </a>
                     </div>
@@ -86,6 +34,25 @@
                                     <a href="{{ route('contact.page') }}">contact us</a>
                                 </li>
                                 <li><a href="{{ route('blog.page') }}">Blog</a></li>
+                                @guest
+                                    <li>
+                                        <a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i> Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Sign up</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a href="{{ Auth::user()->role == 1 ? route('admin.home') : route('user.home') }}"><i class="fa fa-user"></i> {{ Auth::user()->username }}</a>
+                                    </li>
+                                    <li>
+                                        <a id="logout" href="#"><i class="fa fa-sign-out-alt"></i> Logout</a>
+
+                                        <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                @endguest
                             </ul>
                         </nav>
                         <div class="logo-right-button">

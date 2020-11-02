@@ -15,6 +15,7 @@
     <link rel="icon" href="{{ asset('frontend') }}/images/favicon.png" />
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    @yield('page-styles')
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/css/components.css">
@@ -51,13 +52,13 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="{{ asset('backend') }}/assets/js/stisla.js"></script>
 
 <!-- JS Libraies -->
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@yield('page-scripts')
 <!-- Template JS File -->
 <script src="{{ asset('backend') }}/assets/js/scripts.js"></script>
 <script src="{{ asset('backend') }}/assets/js/custom.js"></script>

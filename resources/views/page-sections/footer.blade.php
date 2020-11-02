@@ -16,9 +16,7 @@
                         <h1 style="font-size: 2rem;" class="mt-1">MPP</h1>
                     </a>
                     <p class="footer-address-links">
-                        <a href="tel:+1631237884">+163 123 7884</a>
-                        <a href="mailto:support@wbsite.com" class="mail">Support@Website.com</a>
-                        <span class="address">Melbourne, Australia, 105 South Park Avenue</span>
+                        <span class="address">Masternodes-pos-pool ready to setup your first nodes setup your masternodes with us. Withdraw your coins anytime from anywhere.</span>
                     </p>
                     <h4 class="footer-meta">stay connected on.</h4>
                     <ul class="footer-link">

@@ -6,7 +6,7 @@
         </ul>
     </form>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
+        <li class="dropdown dropdown-list-toggle mt-1"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Notifications
                     <div class="float-right">
@@ -30,15 +30,10 @@
             </div>
         </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="{{ asset('backend') }}/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">{{ Auth::user()->username }}</div></a>
+                <div class="d-sm-none d-lg-inline-block"><i class="fas fa-user mr-1"></i> {{ Auth::user()->username }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="features-profile.html" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
-                </a>
-
-                <a href="features-activities.html" class="dropdown-item has-icon">
-                    <i class="fas fa-bolt"></i> Activities
                 </a>
 
                 <a href="features-settings.html" class="dropdown-item has-icon">
@@ -70,6 +65,25 @@
             <li class="nav-item {{ request()->is('admin/home') ? 'active' : '' }}">
                 <a href="{{ route('admin.home') }}" class="nav-link">
                     <i class="fas fa-fire"></i><span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="menu-header">Blog</li>
+            <li class="nav-item {{ request()->is('categories*') ? 'active' : '' }}">
+                <a href="{{ route('categories.index') }}" class="nav-link">
+                    <i class="fas fa-newspaper"></i> Post Categories
+                </a>
+            </li>
+
+            <li class="nav-item {{ request()->is('posts*') ? 'active' : '' }}">
+                <a href="{{ route('posts.index') }}" class="nav-link">
+                    <i class="fas fa-newspaper"></i> Posts
+                </a>
+            </li>
+
+            <li class="nav-item {{ request()->is('comments*') ? 'active' : '' }}">
+                <a href="{{ route('comments.index') }}" class="nav-link">
+                    <i class="fas fa-comment-alt"></i> Comments <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \Laravelista\Comments\Comment::where('approved', 0)->count() }}</span>
                 </a>
             </li>
 

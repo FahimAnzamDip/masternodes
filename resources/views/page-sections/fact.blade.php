@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row funfact-wrapper mb-0 mt-0">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="funfact-item">
                     <div class="funfact-icon">
                         <i class="flaticon-032-bitcoin-3 funfact__icon"></i>
@@ -13,7 +13,7 @@
                 <!-- end funfact-item-->
             </div>
             <!-- end col-lg-3 -->
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="funfact-item">
                     <div class="funfact-icon">
                         <i class="flaticon-001-bitcoin-20 funfact__icon"></i>
@@ -24,24 +24,13 @@
                 <!-- end funfact-item-->
             </div>
             <!-- end col-lg-3 -->
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="funfact-item">
                     <div class="funfact-icon">
                         <i class="flaticon-034-consulting funfact__icon"></i>
                     </div>
                     <span class="funfact__number counter">7540</span>
                     <p class="funfact__meta">Community</p>
-                </div>
-                <!-- end funfact-item-->
-            </div>
-            <!-- end col-lg-3 -->
-            <div class="col-lg-3">
-                <div class="funfact-item">
-                    <div class="funfact-icon">
-                        <i class="flaticon-006-bitcoin-18 funfact__icon"></i>
-                    </div>
-                    <span class="funfact__number counter">5721</span>
-                    <p class="funfact__meta">Bitcoin Investors</p>
                 </div>
                 <!-- end funfact-item-->
             </div>

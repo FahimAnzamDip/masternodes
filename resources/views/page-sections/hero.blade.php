@@ -1,7 +1,7 @@
 <!-- ================================
 START HERO AREA
 ================================= -->
-<section class="hero-area" style="padding-bottom: 150px;">
+<section class="hero-area" style="padding-bottom: 150px;padding-top: 210px;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 text-center">
