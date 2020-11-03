@@ -121,7 +121,7 @@
 
             <li class="menu-header">Event Calender</li>
             <li class="nav-item border border-light"><a href=""><i class="fas fa-calendar-alt"></i> IEO</a></li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calendar-alt"></i> Event</a></li>
+            <li class="nav-item border border-light {{ request()->is('user/event/calendar') ? 'active' : '' }}"><a href="{{ route('user.event.calendar') }}"><i class="fas fa-calendar-alt"></i> Event</a></li>
             <li class="nav-item border border-light"><a href=""><i class="fas fa-calendar-alt"></i> Program</a></li>
 
             <li class="menu-header">News</li>

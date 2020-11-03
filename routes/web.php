@@ -54,6 +54,8 @@ Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namesp
     Route::get('/user/account-setting', 'UserHomeController@accountSetting')->name('user.account.setting');
     //Support
     Route::get('/user/support', 'UserHomeController@support')->name('user.support');
+    //Event Calendar
+    Route::get('/user/event/calendar', 'UserHomeController@eventCalendar')->name('user.event.calendar');
 });
 
 //Admin Middleware and Namespace
@@ -85,6 +87,10 @@ Route::group(['namespace' => 'Admin'], function () {
         //Normal Coins
         Route::get('normal-coins/delete/{id}', 'NormalCoinsController@delete')->name('normal-coins.delete');
         Route::resource('normal-coins', 'NormalCoinsController')->except('show', 'destroy');
+        //Events
+        Route::get('admin/calendar', 'EventsController@showCalendar')->name('admin.calendar');
+        Route::get('events/delete/{id}')->name('events.delete');
+        Route::resource('events', 'EventsController')->except('show', 'destroy');
     });
 });
 

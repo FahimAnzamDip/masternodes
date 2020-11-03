@@ -19,8 +19,6 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/css/components.css">
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
@@ -115,8 +113,6 @@
         });
     });
 </script>
-
-<script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>

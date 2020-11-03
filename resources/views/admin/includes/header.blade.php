@@ -111,6 +111,18 @@
                     <i class="fab fa-facebook-messenger"></i> Live Chat <span class="badge badge-info ml-4" style="width: 2rem;">{{ \App\Models\Chat::where('read', 0)->where('receiver_id', Auth::user()->id)->where('type', 1)->count() }}</span>
                 </a>
             </li>
+
+            <li class="menu-header">Event</li>
+            <li class="nav-item {{ request()->is('admin/calendar') ? 'active' : '' }}">
+                <a href="{{ route('admin.calendar') }}" class="nav-link">
+                    <i class="fas fa-calendar-alt"></i> Calendar
+                </a>
+            </li>
+            <li class="nav-item {{ request()->is('events*') ? 'active' : '' }}">
+                <a href="{{ route('events.index') }}" class="nav-link">
+                    <i class="fas fa-calendar-plus"></i> Events
+                </a>
+            </li>
         </ul>
 
     </aside>

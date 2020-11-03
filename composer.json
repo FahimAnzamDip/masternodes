@@ -21,6 +21,7 @@
         "laravel/ui": "^3.0",
         "laravelista/comments": "^4.4",
         "pusher/pusher-php-server": "~4.0",
+        "qlick/laravel-full-calendar": "^1.1",
         "realrashid/sweet-alert": "^3.1",
         "sudiptpa/guid": "^1.0",
         "sudiptpa/ipstack": "^1.3",
