@@ -80,7 +80,10 @@
                                         {{ session('status') }}
                                     @endif
 
-                                    @comments(['model' => $post, 'approved' => true])
+                                    @comments([
+                                        'model' => $post,
+                                        'approved' => true
+                                    ])
                                 </div><!-- end comments-wrapper -->
                             </div><!-- end blog-post-body -->
                         </div><!-- end blog-post-item -->

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NormalCoin;
 use App\Models\Post;
+use App\Models\SpecialCoin;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -10,10 +12,14 @@ class PagesController extends Controller
     public function index() {
         $title = "MPP - Home";
         $posts = Post::where('post_status', 1)->latest()->take(3)->get();
+        $special_coins = SpecialCoin::latest()->take(18)->get();
+        $normal_coins = NormalCoin::latest()->take(18)->get();
 
         return view('home-page', [
             'title' => $title,
-            'posts' => $posts
+            'posts' => $posts,
+            'special_coins' => $special_coins,
+            'normal_coins' => $normal_coins
         ]);
     }
 

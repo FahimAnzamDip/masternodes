@@ -10,60 +10,23 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row mt-2">
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>Soon</p>
-                    </div>
+            @forelse($special_coins as $special_coin)
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                    <a href="{{ $special_coin->coin_link }}" class="text-dark">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <img width="64" src="{{ asset('storage/special_coin_images') . '/' . $special_coin->coin_image }}" alt="special coin" class="rounded-circle mb-3">
+                                <h5 class="font-weight-normal text-uppercase">{{ $special_coin->coin_name }}</h5>
+                                <p class="text-uppercase">({{ $special_coin->coin_short_name }})</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/question.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">Coming</h5>
-                        <p>Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/question.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">Coming</h5>
-                        <p>Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/question.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">Coming</h5>
-                        <p>Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/question.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">Coming</h5>
-                        <p>Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/question.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">Coming</h5>
-                        <p>Soon</p>
-                    </div>
-                </div>
-            </div>
+            @empty
+                 <div class="col-12">
+                     <div class="alert alert-warning text-center">No Coins Available</div>
+                 </div>
+            @endforelse
         </div>
     </div>
 </section>
@@ -81,60 +44,23 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row mt-2">
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
+            @forelse($normal_coins as $normal_coin)
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                    <a href="{{ $normal_coin->coin_link }}" class="text-dark">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <img width="64" src="{{ asset('storage/normal_coin_images') . '/' . $normal_coin->coin_image }}" alt="logo" class="rounded-circle mb-3">
+                                <h5 class="font-weight-normal text-uppercase">{{ $normal_coin->coin_name }}</h5>
+                                <p class="text-uppercase">({{ $normal_coin->coin_short_name }})</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-warning text-center">No Coins Available</div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img width="64" src="{{ asset('frontend') }}/images/wgr.png" alt="logo" class="rounded-circle mb-3">
-                        <h5 class="font-weight-normal">WAGERR</h5>
-                        <p>(WGR)</p>
-                    </div>
-                </div>
-            </div>
+            @endforelse
         </div>
     </div>
 </section>

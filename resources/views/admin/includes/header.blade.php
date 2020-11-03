@@ -68,6 +68,19 @@
                 </a>
             </li>
 
+            <li class="menu-header">Coins</li>
+            <li class="nav-item {{ request()->is('special-coins*') ? 'active' : '' }}">
+                <a href="{{ route('special-coins.index') }}" class="nav-link">
+                    <i class="fas fa-coins"></i> Special Coins
+                </a>
+            </li>
+
+            <li class="nav-item {{ request()->is('normal-coins*') ? 'active' : '' }}">
+                <a href="{{ route('normal-coins.index') }}" class="nav-link">
+                    <i class="fab fa-bitcoin"></i> Normal Coins
+                </a>
+            </li>
+
             <li class="menu-header">Blog</li>
             <li class="nav-item {{ request()->is('categories*') ? 'active' : '' }}">
                 <a href="{{ route('categories.index') }}" class="nav-link">

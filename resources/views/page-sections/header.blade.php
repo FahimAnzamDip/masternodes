@@ -105,14 +105,14 @@
                         <a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i> Log In</a>
                     </li>
                     <li class="sidenav__item sidenav__item2 text-center">
-                        <a href="{{ route('register') }}"><i class="fa fa-sign-in-alt"></i> Sign Up</a>
+                        <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Sign Up</a>
                     </li>
                 @else
                     <li class="sidenav__item sidenav__item2 text-center">
                         <a href="{{ Auth::user()->role == 1 ? route('admin.home') : route('user.home')}}"><i class="fa fa-user"></i> {{ Auth::user()->username }}</a>
                     </li>
                     <li class="sidenav__item sidenav__item2 text-center">
-                        <a id="logout" href="#"><i class="fa fa-sign-in-alt"></i> Logout</a>
+                        <a id="logout" href="#"><i class="fa fa-sign-out-alt"></i> Logout</a>
                         <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
                             @csrf
                         </form>
