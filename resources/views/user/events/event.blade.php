@@ -7,6 +7,7 @@
             font-weight: bold;
             color: #ffffff;
         }
+
         .fc-time {
             font-weight: bold;
             color: #ffffff;
@@ -28,7 +29,9 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-body">
-                    {!! $calendar->calendar() !!}
+                    <div class="table-responsive">
+                        {!! $calendar->calendar() !!}
+                    </div>
                 </div>
             </div>
         </div>
