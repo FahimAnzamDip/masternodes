@@ -101,6 +101,11 @@
             </li>
 
             <li class="menu-header">Contact</li>
+            <li class="nav-item {{ request()->is('admin/contact-page*') ? 'active' : '' }}">
+                <a href="{{ route('admin.contact-page') }}" class="nav-link">
+                    <i class="fas fa-file-alt"></i> <span>Contact Page</span>
+                </a>
+            </li>
             <li class="nav-item {{ request()->is('messages*') ? 'active' : '' }}">
                 <a href="{{ route('messages.index') }}" class="nav-link">
                     <i class="fas fa-envelope"></i> <span>Messages <span class="badge badge-primary" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span></span>

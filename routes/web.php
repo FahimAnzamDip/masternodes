@@ -114,6 +114,10 @@ Route::group(['namespace' => 'Admin'], function () {
         //User Account Setting
         Route::get('/admin/account-setting', 'ProfileController@accountSetting')->name('admin.account.setting');
         Route::post('/admin/account-setting/update', 'ProfileController@accountSettingUpdate')->name('admin.account.setting.update');
+
+        //Contact Page
+        Route::get('/admin/contact-page', 'ContactPageController@index')->name('admin.contact-page');
+        Route::post('/admin/contact-page/update/{id}', 'ContactPageController@update')->name('admin.contact-page.update');
     });
 });
 

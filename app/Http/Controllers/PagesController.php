@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactPage;
 use App\Models\Countdown;
 use App\Models\NormalCoin;
 use App\Models\Post;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
     public function index() {
         $title = "MPP - Home";
         $posts = Post::where('post_status', 1)->latest()->take(3)->get();
@@ -18,11 +20,11 @@ class PagesController extends Controller
         $timer = Countdown::first();
 
         return view('home-page', [
-            'title' => $title,
-            'posts' => $posts,
+            'title'         => $title,
+            'posts'         => $posts,
             'special_coins' => $special_coins,
-            'normal_coins' => $normal_coins,
-            'timer' => $timer
+            'normal_coins'  => $normal_coins,
+            'timer'         => $timer
         ]);
     }
 
@@ -48,9 +50,11 @@ class PagesController extends Controller
 
     public function contact() {
         $title = "MPP - Contact";
+        $contact = ContactPage::first();
 
         return view('contact-page', [
-            'title' => $title
+            'title'   => $title,
+            'contact' => $contact
         ]);
     }
 

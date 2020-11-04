@@ -36,12 +36,10 @@
                 <div class="col-lg-4">
                     <div class="sec-heading">
                         <div class="heading-circle"></div>
-                        <p class="sec__meta">get in touch</p>
-                        <h2 class="sec__title">Feel Free to Write Us a Message.</h2>
+                        <p class="sec__meta">{{ $contact->top_title }}</p>
+                        <h2 class="sec__title">{{ $contact->main_title }}</h2>
                         <p class="sec__desc">
-                            Lorem ipsum is simply free text dolor sit amett quie
-                            adipiscing elit. When an unknown printer took a galley.
-                            quiaies lipsum dolor sit atur adip scing
+                            {{ $contact->page_content }}
                         </p>
                     </div><!-- end sec-heading -->
                 </div><!-- end col-lg-5 -->
