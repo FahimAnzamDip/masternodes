@@ -15,6 +15,8 @@
                 Change your account settings on this page.
             </p>
 
+            @include('profile.two-factor-authentication-form')
+
             <div class="row mt-sm-4">
                 <div class="col-md-6">
                     <div class="card">
@@ -45,7 +47,7 @@
 
                                 <div class="form-group">
                                     <label for="phone">Phone Number <span class="text-danger">*</span></label>
-                                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" required placeholder="Enter your phone number" value="{{ Auth::user()->phone }}">
+                                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" placeholder="Enter your phone number" value="{{ Auth::user()->phone }}">
 
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
@@ -69,7 +71,7 @@
                                 <h4>Change Password</h4>
                             </div>
                             <div class="card-body">
-                                @if(Session::has('status'))
+                                @if(Session::get('status') == 'password-updated')
                                     <div class="alert alert-info alert-dismissible fade show" role="alert">
                                         <div class="alert-body">
                                             <strong style="font-size: 16px;">{{ Session::get('status') == 'password-updated' ? 'Password Updated!' : '' }}</strong>

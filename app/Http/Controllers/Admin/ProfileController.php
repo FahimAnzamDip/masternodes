@@ -54,9 +54,9 @@ class ProfileController extends Controller
 
     public function accountSettingUpdate(Request $request) {
         $request->validate([
-            'username' => 'required|min:5|unique:users|max:190',
-            'email'    => 'required|email|max:190',
-            'phone'    => 'required|max:190'
+            'username' => 'required|min:5|max:190|unique:users,username,' . Auth::user()->id,
+            'email'    => 'required|email|max:190|unique:users,email,' . Auth::user()->id,
+            'phone'    => 'nullable|max:190'
         ]);
 
         User::find(Auth::user()->id)->update([
@@ -65,7 +65,7 @@ class ProfileController extends Controller
             'phone'    => $request->phone
         ]);
 
-        toast('Accout Setting Updated!', 'success');
+        toast('Account Settings Updated!', 'success');
 
         return redirect()->route('admin.account.setting');
     }

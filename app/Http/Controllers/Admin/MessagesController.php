@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Message;
+use App\Models\User;
+use App\Notifications\ContactMessageNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -68,7 +71,7 @@ class MessagesController extends Controller
                 'attachment' => $img_name
             ]);
         } else {
-            Message::create([
+            $message = Message::create([
                 'first_name' => $request->first_name,
                 'last_name'  => $request->last_name,
                 'email'      => $request->email,
@@ -77,6 +80,10 @@ class MessagesController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
+
+        $users = User::where('role', 1)->get();
+
+        Notification::send($users, new ContactMessageNotification($message));
 
         toast('Message Sent!', 'success');
 

@@ -1,5 +1,16 @@
 <div class="card">
     <div class="card-body">
+        @if(Session::get('status'))
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <div class="alert-body">
+                    <strong style="font-size: 16px;">{{ Session::get('status') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            </div>
+        @endif
+
         @if(! auth()->user()->two_factor_secret)
             {{-- Enable 2FA --}}
             <p class="text-primary">You have to verify your password. When you enable this feature.</p>

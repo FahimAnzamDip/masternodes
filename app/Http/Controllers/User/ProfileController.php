@@ -54,7 +54,7 @@ class ProfileController extends Controller
 
     public function accountSettingUpdate(Request $request) {
         $request->validate([
-            'email' => 'required|email|max:190',
+            'email' => 'required|email|max:190|unique:users,email,' . Auth::user()->id,
             'phone' => 'required|max:190'
         ]);
 
@@ -63,7 +63,7 @@ class ProfileController extends Controller
             'phone' => $request->phone
         ]);
 
-        toast('Accout Setting Updated!', 'success');
+        toast('Account Settings Updated!', 'success');
 
         return redirect()->route('user.account.setting');
     }

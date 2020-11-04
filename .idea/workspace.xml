@@ -21,11 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="857608be-2114-4af8-9c98-f0d754415637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contact-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/profile/account-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profile/account-settings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/two-factor-authentication-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/two-factor-authentication-form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,8 @@
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CommentsController.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/admin/posts/edit.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/views/emails/message/message-email.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ContactPageController.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/admin/messages/contact.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -308,7 +309,7 @@
       <workItem from="1604236081365" duration="23807000" />
       <workItem from="1604300258582" duration="24136000" />
       <workItem from="1604395024474" duration="27579000" />
-      <workItem from="1604476589106" duration="31382000" />
+      <workItem from="1604476589106" duration="35901000" />
     </task>
     <servers />
   </component>
