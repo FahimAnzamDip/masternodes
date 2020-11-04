@@ -33,11 +33,11 @@
                 <div class="d-sm-none d-lg-inline-block"><i class="fas fa-user mr-1"></i> {{ Auth::user()->username }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="features-profile.html" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
+                    <i class="far fa-user"></i> My Profile
                 </a>
 
                 <a href="features-settings.html" class="dropdown-item has-icon">
-                    <i class="fas fa-cog"></i> Settings
+                    <i class="fas fa-cog"></i> Account Settings
                 </a>
 
                 <div class="dropdown-divider"></div>
@@ -121,6 +121,13 @@
             <li class="nav-item {{ request()->is('events*') ? 'active' : '' }}">
                 <a href="{{ route('events.index') }}" class="nav-link">
                     <i class="fas fa-calendar-plus"></i> Events
+                </a>
+            </li>
+
+            <li class="menu-header">Clock</li>
+            <li class="nav-item {{ request()->is('admin/countdown') ? 'active' : '' }}">
+                <a href="{{ route('admin.countdown') }}" class="nav-link">
+                    <i class="fas fa-clock"></i> Countdown
                 </a>
             </li>
         </ul>

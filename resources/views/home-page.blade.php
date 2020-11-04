@@ -8,6 +8,8 @@
 
     @include('page-sections.coins')
 
+    @include('page-sections.countdown')
+
     @include('page-sections.roadmap')
 
     @include('page-sections.blog')

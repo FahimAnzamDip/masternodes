@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/flaticon.css" />
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/owl.theme.default.min.css" />
+    @yield('front-page-styles')
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/style.css" />
 </head>
 
@@ -67,6 +68,7 @@
 <script src="{{ asset('frontend') }}/js/waypoint.min.js"></script>
 <script src="{{ asset('frontend') }}/js/jquery.counterup.min.js"></script>
 <script src="{{ asset('frontend') }}/js/smooth-scrolling.js"></script>
+<script src="{{ asset('frontend') }}/js/countdown.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8c896b1c1f1e22"></script>
 <script src="{{ asset('frontend') }}/js/main.js"></script>
@@ -90,6 +92,7 @@
         });
     });
 </script>
+@yield('front-page-scripts')
 </body>
 
 </html>

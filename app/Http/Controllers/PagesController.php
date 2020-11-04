@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Countdown;
 use App\Models\NormalCoin;
 use App\Models\Post;
 use App\Models\SpecialCoin;
@@ -14,12 +15,14 @@ class PagesController extends Controller
         $posts = Post::where('post_status', 1)->latest()->take(3)->get();
         $special_coins = SpecialCoin::latest()->take(18)->get();
         $normal_coins = NormalCoin::latest()->take(18)->get();
+        $timer = Countdown::first();
 
         return view('home-page', [
             'title' => $title,
             'posts' => $posts,
             'special_coins' => $special_coins,
-            'normal_coins' => $normal_coins
+            'normal_coins' => $normal_coins,
+            'timer' => $timer
         ]);
     }
 

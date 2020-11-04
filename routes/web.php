@@ -82,15 +82,18 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/comments/approved', 'CommentsController@approvedComments')->name('comments.approved');
         Route::get('/comments/delete/{id}', 'CommentsController@delete')->name('comments.delete');
         //Special Coins
-        Route::get('special-coins/delete/{id}', 'SpecialCoinsController@delete')->name('special-coins.delete');
+        Route::get('/special-coins/delete/{id}', 'SpecialCoinsController@delete')->name('special-coins.delete');
         Route::resource('special-coins', 'SpecialCoinsController')->except('show', 'destroy');
         //Normal Coins
-        Route::get('normal-coins/delete/{id}', 'NormalCoinsController@delete')->name('normal-coins.delete');
+        Route::get('/normal-coins/delete/{id}', 'NormalCoinsController@delete')->name('normal-coins.delete');
         Route::resource('normal-coins', 'NormalCoinsController')->except('show', 'destroy');
         //Events
-        Route::get('admin/calendar', 'EventsController@showCalendar')->name('admin.calendar');
-        Route::get('events/delete/{id}')->name('events.delete');
+        Route::get('/admin/calendar', 'EventsController@showCalendar')->name('admin.calendar');
+        Route::get('/events/delete/{id}')->name('events.delete');
         Route::resource('events', 'EventsController')->except('show', 'destroy');
+        //Countdown
+        Route::get('/admin/countdown', 'CountdownController@countdown')->name('admin.countdown');
+        Route::post('/countdown/update/{id}', 'CountdownController@update')->name('countdown.update');
     });
 });
 
