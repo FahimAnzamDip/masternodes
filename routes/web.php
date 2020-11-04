@@ -43,8 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 //User Middleware and Namespace
 Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namespace' => 'User'], function () {
-    //User Dashboard
-    Route::get('/user/home', 'UserHomeController@index')->name('user.home');
+    //User Calculator
+    Route::get('/user/calculator', 'UserHomeController@calculator')->name('user.calculator');
     //User Profile
     Route::get('/user/profile', 'UserHomeController@profile')->name('user.profile');
     Route::post('/user/profile/update', 'UserHomeController@profileUpdate')->name('user.profile.update');

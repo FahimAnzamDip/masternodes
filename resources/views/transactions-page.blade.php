@@ -1,5 +1,22 @@
 @extends('layouts.front-layout')
 
+@section('front-page-styles')
+    <style>
+        .transaction_id:visited {
+            color: #434F6C;
+        }
+        .transaction_id:link {
+            color: #FFAC45;
+        }
+        .transaction_id:active {
+            color: #434F6C;
+        }
+        .transaction_id {
+            color: #FFAC45;
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- ================================
     START BREADCRUMB AREA
@@ -68,7 +85,11 @@
                                         <p>Lorem Ipsum Dolor</p>
                                     </td>
                                     <td>
-                                        <p>SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf</p>
+                                        <p>
+                                            <a class="transaction_id" target="_blank" href="#1">
+                                                SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf
+                                            </a>
+                                        </p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -82,7 +103,11 @@
                                         <p>Lorem Ipsum Dolor</p>
                                     </td>
                                     <td>
-                                        <p>SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf</p>
+                                        <p>
+                                            <a class="transaction_id" target="_blank" href="#2">
+                                                SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf
+                                            </a>
+                                        </p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -96,7 +121,11 @@
                                         <p>Lorem Ipsum Dolor</p>
                                     </td>
                                     <td>
-                                        <p>SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf</p>
+                                        <p>
+                                            <a class="transaction_id" target="_blank" href="#3">
+                                                SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf
+                                            </a>
+                                        </p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -110,7 +139,11 @@
                                         <p>Lorem Ipsum Dolor</p>
                                     </td>
                                     <td>
-                                        <p>SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf</p>
+                                        <p>
+                                            <a class="transaction_id" target="_blank" href="#4">
+                                                SDFKSDFKSssdfkhaDSHFKDFWLEsdfoahpawSDFSDhwfsXsdofhaf
+                                            </a>
+                                        </p>
                                     </td>
                                 </tr>
                             </tbody>

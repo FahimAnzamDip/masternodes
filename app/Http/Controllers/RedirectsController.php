@@ -15,7 +15,7 @@ class RedirectsController extends Controller
             return redirect()->route('admin.home');
         } else {
             //User
-            return redirect()->route('user.home');
+            return redirect()->route('user.calculator');
         }
     }
 }

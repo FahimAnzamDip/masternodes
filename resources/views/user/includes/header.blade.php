@@ -7,13 +7,13 @@
     </div>
     <ul class="navbar-nav navbar-right">
         <li class="mr-4 mt-1 d-none d-md-block">
-            <a href="" class="text-white"><strong>Coin A: 200 3%</strong></a>
+            <a href="" class="text-white"><strong>Coin A to BTC</strong></a>
         </li>
         <li class="mr-4 mt-1 d-none d-md-block">
-            <a href="" class="text-white"><strong>Coin A: 200 3%</strong></a>
+            <a href="" class="text-white"><strong>Coin A to ETH</strong></a>
         </li>
         <li class="mr-4 mt-1 d-none d-md-block">
-            <a href="" class="text-white"><strong>Coin A: 200 3%</strong></a>
+            <a href="" class="text-white"><strong>Coin A to MPC</strong></a>
         </li>
         <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
@@ -108,24 +108,64 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Calculator</li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-money-check-alt"></i> Calculator</a></li>
+            <li class="nav-item border border-light {{ request()->is('user/calculator') ? 'active' : '' }}">
+                <a href="{{ route('user.calculator') }}">
+                    <i class="fas fa-money-check-alt"></i> Calculator
+                </a>
+            </li>
 
             <li class="menu-header">Masternodes</li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calculator"></i> Available Masternodes</a></li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calculator"></i> My Masternodes</a></li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calculator"></i> Pending to Start</a></li>
+            <li class="nav-item border border-light" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                <a class="disabled btn" href="">
+                    <i class="fas fa-calculator"></i> Available Masternodes
+                </a>
+            </li>
+            <li class="nav-item border border-light" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                <a class="disabled btn" href="">
+                    <i class="fas fa-calculator"></i> My Masternodes
+                </a>
+            </li>
+            <li class="nav-item border border-light" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                <a class="disabled btn" href="">
+                    <i class="fas fa-calculator"></i> Pending to Start
+                </a>
+            </li>
 
             <li class="menu-header">Offer/Bounties</li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-box-open"></i> Live Bounties</a></li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-box-open"></i> Expired</a></li>
+            <li class="nav-item border border-light">
+                <a href="">
+                    <i class="fas fa-box-open"></i> Live Bounties
+                </a>
+            </li>
+            <li class="nav-item border border-light">
+                <a href="">
+                    <i class="fas fa-box-open"></i> Expired
+                </a>
+            </li>
 
             <li class="menu-header">Event Calender</li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calendar-alt"></i> IEO</a></li>
-            <li class="nav-item border border-light {{ request()->is('user/event/calendar') ? 'active' : '' }}"><a href="{{ route('user.event.calendar') }}"><i class="fas fa-calendar-alt"></i> Event</a></li>
-            <li class="nav-item border border-light"><a href=""><i class="fas fa-calendar-alt"></i> Program</a></li>
+            <li class="nav-item border border-light" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                <a class="disabled btn" href="">
+                    <i class="fas fa-calendar-alt"></i> IEO
+                </a>
+            </li>
+            <li class="nav-item border border-light {{ request()->is('user/event/calendar') ? 'active' : '' }}">
+                <a href="{{ route('user.event.calendar') }}">
+                    <i class="fas fa-calendar-alt"></i> Event
+                </a>
+            </li>
+            <li class="nav-item border border-light" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                <a class="disabled btn" href="">
+                    <i class="fas fa-calendar-alt"></i> Program
+                </a>
+            </li>
 
             <li class="menu-header">News</li>
-            <li class="nav-item border border-light"><a href="{{ route('blog.page') }}"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li class="nav-item border border-light">
+                <a href="{{ route('blog.page') }}">
+                    <i class="fas fa-newspaper"></i> Blog
+                </a>
+            </li>
         </ul>
 
     </aside>

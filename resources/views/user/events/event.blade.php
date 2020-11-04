@@ -21,7 +21,7 @@
         <div class="section-header">
             <h1>Event Calendar</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('home.page') }}">Home</a></div>
                 <div class="breadcrumb-item ">Event Calendar</div>
             </div>
         </div>

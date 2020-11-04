@@ -12,10 +12,10 @@ use LaravelFullCalendar\Facades\Calendar;
 class UserHomeController extends Controller
 {
 
-    public function index() {
-        $title = "MPP User - Home";
+    public function calculator() {
+        $title = "MPP User - Calculator";
 
-        return view('user.user-home', [
+        return view('user.calculator.calculate', [
             'title' => $title
         ]);
     }
