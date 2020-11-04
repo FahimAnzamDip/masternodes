@@ -21,14 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="857608be-2114-4af8-9c98-f0d754415637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserHomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserHomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/calculator/calculate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/calculator/calculate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/events/event.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/events/event.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/profile/account-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/profile/account-settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/profile/my-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/profile/my-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/profile/my-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profile/my-profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/footer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +304,7 @@
       <workItem from="1604236081365" duration="23807000" />
       <workItem from="1604300258582" duration="24136000" />
       <workItem from="1604395024474" duration="27579000" />
-      <workItem from="1604476589106" duration="27169000" />
+      <workItem from="1604476589106" duration="27833000" />
     </task>
     <servers />
   </component>
