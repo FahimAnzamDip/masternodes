@@ -5,8 +5,7 @@
         <div class="section-header">
             <h1>My Profile</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{{ route('home.page') }}">Home</a></div>
-                <div class="breadcrumb-item active"><a href="{{ route('user.home') }}">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
                 <div class="breadcrumb-item">Profile</div>
             </div>
         </div>
@@ -15,63 +14,11 @@
             <p class="section-lead">
                 Change information about yourself on this page.
             </p>
-
+            
             <div class="row mt-sm-4">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4>Your Referral Link (You can share it with others). <br>
-                                Total Referred Users: {{ \App\Models\User::where('referrer_id', Auth::user()->referral_id)->count() }}</h4>
-                        </div>
-                        <div class="card-body">
-                            <input class="form-control font-weight-bold" type="text" readonly="readonly" value="{{url('/register').'?ref='.Auth::user()->referral_id}}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Verification Status</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
-                                    <p class="mb-0 font-weight-bold">Account</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
-                                    <p class="mb-0 font-weight-bold">Email</p>
-                                    <div class="badge badge-success" style="border-radius: 0.25rem;">
-                                        <strong>Verified</strong>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-6">
-                                    <p class="mb-0 font-weight-bold">Address</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-6">
-                                    <p class="mb-0 font-weight-bold">Phone Number</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <form method="POST" action="{{ route('user.profile.update') }}" class="needs-validation" novalidate>
+                        <form method="POST" action="{{ route('admin.profile.update') }}" class="needs-validation" novalidate>
                             @csrf
                             <div class="card-header">
                                 <h4>Edit Profile</h4>

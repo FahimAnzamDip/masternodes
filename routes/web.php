@@ -21,6 +21,7 @@ Route::get('/blog', 'PagesController@blog')->name('blog.page');
 Route::group(['middleware' => 'auth'], function () {
     //Redirect After Login
     Route::get('/redirects', 'RedirectsController@redirectTo')->name('redirects');
+
     //New Device Authorization
     Route::get('/authorize/{token}', [
         'name' => 'Authorize Login',
@@ -32,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'authorize.resend',
         'uses' => 'Auth\AuthorizeController@resend',
     ]);
+
     //Live Chats
     Route::get('/chats', 'ChatsController@index')->name('chats');
     Route::get('/users', 'ChatsController@users');
@@ -44,18 +46,22 @@ Route::group(['middleware' => 'auth'], function () {
 //User Middleware and Namespace
 Route::group(['middleware' => ['auth', 'user', 'verified', 'authorize'], 'namespace' => 'User'], function () {
     //User Calculator
+    Route::get('/user/home', 'UserHomeController@index')->name('user.home');
+    //User Calculator
     Route::get('/user/calculator', 'UserHomeController@calculator')->name('user.calculator');
-    //User Profile
-    Route::get('/user/profile', 'UserHomeController@profile')->name('user.profile');
-    Route::post('/user/profile/update', 'UserHomeController@profileUpdate')->name('user.profile.update');
-    //2FA
-    Route::get('/user/twofactor', 'UserHomeController@twofactor')->name('user.twofactor');
-    //Account Setting
-    Route::get('/user/account-setting', 'UserHomeController@accountSetting')->name('user.account.setting');
     //Support
     Route::get('/user/support', 'UserHomeController@support')->name('user.support');
     //Event Calendar
     Route::get('/user/event/calendar', 'UserHomeController@eventCalendar')->name('user.event.calendar');
+    //2FA
+    Route::get('/user/twofactor', 'UserHomeController@twofactor')->name('user.twofactor');
+
+    //User Profile
+    Route::get('/user/profile', 'ProfileController@profile')->name('user.profile');
+    Route::post('/user/profile/update', 'ProfileController@profileUpdate')->name('user.profile.update');
+    //User Account Setting
+    Route::get('/user/account-setting', 'ProfileController@accountSetting')->name('user.account.setting');
+    Route::post('/user/account-setting/update', 'ProfileController@accountSettingUpdate')->name('user.account.setting.update');
 });
 
 //Admin Middleware and Namespace
@@ -63,6 +69,7 @@ Route::group(['namespace' => 'Admin'], function () {
     //Contact Messages
     Route::get('messages/delete/{id}', 'MessagesController@delete')->name('messages.delete');
     Route::resource('messages', 'MessagesController')->except('create', 'edit', 'update', 'destroy');
+
     //Posts
     Route::get('/posts/draft', 'PostsController@draft')->name('posts.draft');
     Route::get('/posts/checkSlug', 'PostsController@checkSlug')->name('posts.check.slug');
@@ -72,28 +79,41 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['middleware' => ['auth', 'admin']], function () {
         //Admin Dashboard
         Route::get('/admin/home', 'AdminHomeController@index')->name('admin.home');
+
         //Post Categories
         Route::get('/categories/delete/{id}', 'CategoriesController@delete')->name('categories.delete');
         Route::resource('categories', 'CategoriesController')->except('show', 'destroy');
+
         //Post Comments
         Route::get('/comments', 'CommentsController@index')->name('comments.index');
         Route::get('/comments/approve/{id}', 'CommentsController@approve')->name('comments.approve');
         Route::get('/comments/disapprove/{id}', 'CommentsController@disapprove')->name('comments.disapprove');
         Route::get('/comments/approved', 'CommentsController@approvedComments')->name('comments.approved');
         Route::get('/comments/delete/{id}', 'CommentsController@delete')->name('comments.delete');
+
         //Special Coins
         Route::get('/special-coins/delete/{id}', 'SpecialCoinsController@delete')->name('special-coins.delete');
         Route::resource('special-coins', 'SpecialCoinsController')->except('show', 'destroy');
+
         //Normal Coins
         Route::get('/normal-coins/delete/{id}', 'NormalCoinsController@delete')->name('normal-coins.delete');
         Route::resource('normal-coins', 'NormalCoinsController')->except('show', 'destroy');
+
         //Events
         Route::get('/admin/calendar', 'EventsController@showCalendar')->name('admin.calendar');
         Route::get('/events/delete/{id}')->name('events.delete');
         Route::resource('events', 'EventsController')->except('show', 'destroy');
+
         //Countdown
         Route::get('/admin/countdown', 'CountdownController@countdown')->name('admin.countdown');
         Route::post('/countdown/update/{id}', 'CountdownController@update')->name('countdown.update');
+
+        //User Profile
+        Route::get('/admin/profile', 'ProfileController@profile')->name('admin.profile');
+        Route::post('/admin/profile/update', 'ProfileController@profileUpdate')->name('admin.profile.update');
+        //User Account Setting
+        Route::get('/admin/account-setting', 'ProfileController@accountSetting')->name('admin.account.setting');
+        Route::post('/admin/account-setting/update', 'ProfileController@accountSettingUpdate')->name('admin.account.setting.update');
     });
 });
 

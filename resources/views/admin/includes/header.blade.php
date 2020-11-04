@@ -32,11 +32,11 @@
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <div class="d-sm-none d-lg-inline-block"><i class="fas fa-user mr-1"></i> {{ Auth::user()->username }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="features-profile.html" class="dropdown-item has-icon">
+                <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> My Profile
                 </a>
 
-                <a href="features-settings.html" class="dropdown-item has-icon">
+                <a href="{{ route('admin.account.setting') }}" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Account Settings
                 </a>
 
@@ -71,63 +71,63 @@
             <li class="menu-header">Coins</li>
             <li class="nav-item {{ request()->is('special-coins*') ? 'active' : '' }}">
                 <a href="{{ route('special-coins.index') }}" class="nav-link">
-                    <i class="fas fa-coins"></i> Special Coins
+                    <i class="fas fa-coins"></i> <span>Special Coins</span>
                 </a>
             </li>
 
             <li class="nav-item {{ request()->is('normal-coins*') ? 'active' : '' }}">
                 <a href="{{ route('normal-coins.index') }}" class="nav-link">
-                    <i class="fab fa-bitcoin"></i> Normal Coins
+                    <i class="fab fa-bitcoin"></i> <span>Normal Coins</span>
                 </a>
             </li>
 
             <li class="menu-header">Blog</li>
             <li class="nav-item {{ request()->is('categories*') ? 'active' : '' }}">
                 <a href="{{ route('categories.index') }}" class="nav-link">
-                    <i class="fas fa-newspaper"></i> Post Categories
+                    <i class="fas fa-newspaper"></i> <span>Post Categories</span>
                 </a>
             </li>
 
             <li class="nav-item {{ request()->is('posts*') ? 'active' : '' }}">
                 <a href="{{ route('posts.index') }}" class="nav-link">
-                    <i class="fas fa-newspaper"></i> Posts
+                    <i class="fas fa-newspaper"></i> <span>Posts</span>
                 </a>
             </li>
 
             <li class="nav-item {{ request()->is('comments*') ? 'active' : '' }}">
                 <a href="{{ route('comments.index') }}" class="nav-link">
-                    <i class="fas fa-comment-alt"></i> Comments <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \Laravelista\Comments\Comment::where('approved', 0)->count() }}</span>
+                    <i class="fas fa-comment-alt"></i> <span>Comments <span class="badge badge-primary" style="width: 2rem;">{{ \Laravelista\Comments\Comment::where('approved', 0)->count() }}</span></span>
                 </a>
             </li>
 
             <li class="menu-header">Contact</li>
             <li class="nav-item {{ request()->is('messages*') ? 'active' : '' }}">
                 <a href="{{ route('messages.index') }}" class="nav-link">
-                    <i class="fas fa-envelope"></i> Messages <span class="badge badge-primary ml-4" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span>
+                    <i class="fas fa-envelope"></i> <span>Messages <span class="badge badge-primary" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span></span>
                 </a>
             </li>
             <li class="nav-item {{ request()->is('chat*') ? 'active' : '' }}">
                 <a href="{{ route('chats') }}" class="nav-link">
-                    <i class="fab fa-facebook-messenger"></i> Live Chat <span class="badge badge-info ml-4" style="width: 2rem;">{{ \App\Models\Chat::where('read', 0)->where('receiver_id', Auth::user()->id)->where('type', 1)->count() }}</span>
+                    <i class="fab fa-facebook-messenger"></i> <span>Live Chat <span class="badge badge-info" style="width: 2rem;">{{ \App\Models\Chat::where('read', 0)->where('receiver_id', Auth::user()->id)->where('type', 1)->count() }}</span></span>
                 </a>
             </li>
 
             <li class="menu-header">Event</li>
             <li class="nav-item {{ request()->is('admin/calendar') ? 'active' : '' }}">
                 <a href="{{ route('admin.calendar') }}" class="nav-link">
-                    <i class="fas fa-calendar-alt"></i> Calendar
+                    <i class="fas fa-calendar-alt"></i> <span>Calendar</span>
                 </a>
             </li>
             <li class="nav-item {{ request()->is('events*') ? 'active' : '' }}">
                 <a href="{{ route('events.index') }}" class="nav-link">
-                    <i class="fas fa-calendar-plus"></i> Events
+                    <i class="fas fa-calendar-plus"></i> <span>Events</span>
                 </a>
             </li>
 
             <li class="menu-header">Clock</li>
             <li class="nav-item {{ request()->is('admin/countdown') ? 'active' : '' }}">
                 <a href="{{ route('admin.countdown') }}" class="nav-link">
-                    <i class="fas fa-clock"></i> Countdown
+                    <i class="fas fa-clock"></i> <span>Countdown</span>
                 </a>
             </li>
         </ul>

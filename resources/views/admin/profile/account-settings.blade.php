@@ -5,8 +5,7 @@
         <div class="section-header">
             <h1>Account Settings</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{{ route('home.page') }}">Home</a></div>
-                <div class="breadcrumb-item active"><a href="{{ route('user.home') }}">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
                 <div class="breadcrumb-item">Account Settings</div>
             </div>
         </div>
@@ -19,16 +18,22 @@
             <div class="row mt-sm-4">
                 <div class="col-md-6">
                     <div class="card">
-                        <form method="POST" action="{{ route('user.account.setting.update') }}">
+                        <form method="POST" action="{{ route('admin.account.setting.update') }}">
                             @csrf
 
                             <div class="card-header">
-                                <h4>Change Email & Phone</h4>
+                                <h4>Change Username, Email & Phone</h4>
                             </div>
                             <div class="card-body">
-                                <div class="alert alert-danger mb-4">
-                                    <strong>After changing Email or Phone you can't withdraw within 48 hour.</strong>
+                                <div class="form-group">
+                                    <label for="username">Username <span class="text-danger">*</span></label>
+                                    <input class="form-control @error('username') is-invalid @enderror" type="text" name="username" required placeholder="Enter your username" value="{{ Auth::user()->username }}">
+
+                                    @error('username')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
+
                                 <div class="form-group">
                                     <label for="email">Email <span class="text-danger">*</span></label>
                                     <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" required placeholder="Enter your email" value="{{ Auth::user()->email }}">
@@ -79,7 +84,7 @@
                                     <input class="form-control @error('current_password', 'updatePassword') is-invalid @enderror" type="password" name="current_password" required placeholder="Enter your current password">
 
                                     @error('current_password', 'updatePassword')
-                                        <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -88,7 +93,7 @@
                                     <input class="form-control @error('password', 'updatePassword') is-invalid @enderror" type="password" name="password" required placeholder="Enter your new password">
 
                                     @error('password', 'updatePassword')
-                                        <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -97,7 +102,7 @@
                                     <input class="form-control @error('password_confirmation', 'updatePassword') is-invalid @enderror" type="password" name="password_confirmation" required placeholder="Enter your new password again">
 
                                     @error('password_confirmation', 'updatePassword')
-                                        <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
