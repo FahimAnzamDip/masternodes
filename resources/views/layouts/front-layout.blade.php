@@ -54,9 +54,9 @@
 </div>
 
 <!-- start back-to-top -->
-<div id="back-to-top">
-    <i class="fas fa-angle-up" title="Go top"></i>
-</div>
+{{--<div id="back-to-top">--}}
+{{--    <i class="fas fa-angle-up" title="Go top"></i>--}}
+{{--</div>--}}
 <!-- end back-to-top -->
 
 @include('sweetalert::alert')
@@ -93,6 +93,20 @@
     });
 </script>
 @yield('front-page-scripts')
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5fa3a964613f1c78e60839e2/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 
 </html>

@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-lg-3 col-sm-6">
                 <div class="footer-shared">
-                    <a href="{{ route('home.page') }}" style="color: #333333">
-                        <h1 style="font-size: 2rem;" class="mt-1">MPP</h1>
+                    <a href="{{ route('home.page') }}">
+                        <img style="width:100px;" src="{{ asset('frontend/images/site_logo.png') }}" alt="site logo">
                     </a>
                     <p class="footer-address-links">
                         <span class="address">Masternodes-pos-pool ready to setup your first nodes setup your masternodes with us. Withdraw your coins anytime from anywhere.</span>

@@ -7,8 +7,8 @@
             <div class="row header-menu-row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="{{ route('home.page') }}" style="color: #2d3748">
-                            <h1 style="font-size: 2rem;" class="mt-1">MPP</h1>
+                        <a href="{{ route('home.page') }}">
+                            <img style="width: 50px" src="{{ asset('frontend/images/site_logo.png') }}" alt="site logo">
                         </a>
                     </div>
                     <!-- end logo -->

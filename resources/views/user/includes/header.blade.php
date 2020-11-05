@@ -101,12 +101,14 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('home.page') }}">Masternode POS Pool</a>
+            <a href="{{ route('home.page') }}">
+                <img class="my-2" style="width: 70px;" src="{{ asset('backend/assets/img/site_logo.png') }}" alt="site logo">
+            </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('home.page') }}">MPP</a>
         </div>
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu mt-2">
             <li class="menu-header">Calculator</li>
             <li class="nav-item border border-light {{ request()->is('user/calculator') ? 'active' : '' }}">
                 <a href="{{ route('user.calculator') }}">

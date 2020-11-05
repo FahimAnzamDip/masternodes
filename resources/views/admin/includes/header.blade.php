@@ -55,12 +55,16 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('home.page') }}">Masternode POS Pool</a>
+            <a href="{{ route('home.page') }}">
+                <img class="mt-2" style="width: 70px;" src="{{ asset('backend/assets/img/site_logo.png') }}" alt="site logo">
+            </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">MPP</a>
+            <a href="{{ route('home.page') }}">
+                <img style="width: 40px;" src="{{ asset('backend/assets/img/site_logo.png') }}" alt="site logo">
+            </a>
         </div>
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu mt-2">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item {{ request()->is('admin/home') ? 'active' : '' }}">
                 <a href="{{ route('admin.home') }}" class="nav-link">
