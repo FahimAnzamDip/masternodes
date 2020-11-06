@@ -40,11 +40,27 @@
                             <div class="row">
                                 <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
                                     <p class="mb-0 font-weight-bold">Account</p>
-                                    <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
-                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
-                                            <strong>Not Verified</strong>
-                                        </div>
-                                    </a>
+                                        @if(Auth::user()->customer->account_status == 1)
+                                            <div class="badge badge-info" style="border-radius: 0.25rem;">
+                                                Pending
+                                            </div>
+                                        @elseif(Auth::user()->customer->account_status == 2)
+                                            <div class="badge badge-success" style="border-radius: 0.25rem;">
+                                                Verified
+                                            </div>
+                                        @elseif(Auth::user()->customer->account_status == 3)
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-danger" style="border-radius: 0.25rem;">
+                                                    Rejected
+                                                </div>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                                    Not Verified
+                                                </div>
+                                            </a>
+                                        @endif
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
                                     <p class="mb-0 font-weight-bold">Email</p>
@@ -62,18 +78,52 @@
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6">
                                     <p class="mb-0 font-weight-bold">Address</p>
-                                    <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
-                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
-                                            <strong>Not Verified</strong>
-                                        </div>
-                                    </a>
+                                        @if(Auth::user()->customer->location_status == 1)
+                                            <div class="badge badge-info" style="border-radius: 0.25rem;">
+                                                Pending
+                                            </div>
+                                        @elseif(Auth::user()->customer->location_status == 2)
+                                            <div class="badge badge-success" style="border-radius: 0.25rem;">
+                                                Verified
+                                            </div>
+                                        @elseif(Auth::user()->customer->location_status == 3)
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-danger" style="border-radius: 0.25rem;">
+                                                    Rejected
+                                                </div>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                                    Not Verified
+                                                </div>
+                                            </a>
+                                        @endif
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6">
                                     <p class="mb-0 font-weight-bold">Phone Number</p>
                                     <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
-                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
-                                            <strong>Not Verified</strong>
-                                        </div>
+                                        @if(Auth::user()->customer->location_status == 1)
+                                            <div class="badge badge-info" style="border-radius: 0.25rem;">
+                                                Pending
+                                            </div>
+                                        @elseif(Auth::user()->customer->location_status == 2)
+                                            <div class="badge badge-success" style="border-radius: 0.25rem;">
+                                                Verified
+                                            </div>
+                                        @elseif(Auth::user()->customer->location_status == 3)
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-danger" style="border-radius: 0.25rem;">
+                                                    Rejected
+                                                </div>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                                <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                                    Not Verified
+                                                </div>
+                                            </a>
+                                        @endif
                                     </a>
                                 </div>
                             </div>

@@ -22,9 +22,9 @@
                     </a>
                     <a href="{{ route('admin.users.kyc') }}" class="btn btn-primary mr-3">
                         <span class="badge badge-white">
-                            {{ \App\Models\Customer::where('identity_status', 1)->where('location_status', 1)->where('account_status', 1)->count() }}
+                            {{ \App\Models\Customer::count() }}
                         </span>
-                        Pending
+                        All
                     </a>
                 </div>
             </div>

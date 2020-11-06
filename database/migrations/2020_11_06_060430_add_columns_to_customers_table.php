@@ -31,7 +31,7 @@ class AddColumnsToCustomersTable extends Migration
     {
         Schema::table('customers', function (Blueprint $table) {
             $table->dropColumn('admin_verify_code');
-            $table->dropColumn('location_verified_at');
+            $table->dropColumn('address_verified_at');
             $table->dropColumn('identity_verified_at');
             $table->dropColumn('phone_verified_at');
             $table->dropColumn('account_verified_at');
