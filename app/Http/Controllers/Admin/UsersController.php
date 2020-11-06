@@ -189,7 +189,7 @@ class UsersController extends Controller
         if ($request->location_status == 2) {
             Customer::findOrFail($id)->update([
                 'location_status' => $request->location_status,
-                'location_verified_at' => Carbon::now(),
+                'address_verified_at' => Carbon::now(),
                 'phone_verified_at' => Carbon::now()
             ]);
         } else {
