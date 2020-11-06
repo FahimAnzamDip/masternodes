@@ -38,16 +38,16 @@
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="pills-home">
-                                        @if(Auth::user()->customer->identity_status == 1)
+                                        @if(Auth::user()->customer->identity_status ?? '' == 1)
                                             <div class="alert alert-primary">
                                                 You already have a Identity verification request!
                                             </div>
-                                        @elseif(Auth::user()->customer->identity_status == 2)
+                                        @elseif(Auth::user()->customer->identity_status ?? '' == 2)
                                             <div class="alert alert-success">
                                                 Your Identity verification is done!
                                             </div>
                                         @else
-                                            @if(Auth::user()->customer->identity_status == 3)
+                                            @if(Auth::user()->customer->identity_status ?? '' == 3)
                                                 <div class="alert alert-danger">
                                                     Your Identity verification is rejected! Please contact support before sending another request.
                                                 </div>
@@ -79,16 +79,16 @@
                                         @endif
                                     </div>
                                     <div class="tab-pane fade" id="pills-profile">
-                                        @if(Auth::user()->customer->location_status == 1)
+                                        @if(Auth::user()->customer->location_status ?? '' == 1)
                                             <div class="alert alert-primary">
                                                 You already have a Location verification request!
                                             </div>
-                                        @elseif(Auth::user()->customer->location_status == 2)
+                                        @elseif(Auth::user()->customer->location_status ?? '' == 2)
                                             <div class="alert alert-success">
                                                 Your Location verification is done!
                                             </div>
                                         @else
-                                            @if(Auth::user()->customer->location_status == 3)
+                                            @if(Auth::user()->customer->location_status ?? '' == 3)
                                                 <div class="alert alert-danger">
                                                     Your Location verification is rejected! Please contact support before sending another request.
                                                 </div>
@@ -119,16 +119,16 @@
                                         @endif
                                     </div>
                                     <div class="tab-pane fade" id="pills-contact">
-                                        @if(Auth::user()->customer->account_status == 1)
+                                        @if(Auth::user()->customer->account_status ?? '' == 1)
                                             <div class="alert alert-primary">
                                                 You already have a Account verification request!
                                             </div>
-                                        @elseif(Auth::user()->customer->account_status == 2)
+                                        @elseif(Auth::user()->customer->account_status ?? '' == 2)
                                             <div class="alert alert-success">
                                                 Your Account verification is done!
                                             </div>
                                         @else
-                                            @if(Auth::user()->customer->account_status == 3)
+                                            @if(Auth::user()->customer->account_status ?? '' == 3)
                                                 <div class="alert alert-danger">
                                                     We can't verify it's you! Please contact support before sending another request.
                                                 </div>
@@ -168,15 +168,15 @@
                             <div class="row">
                                 <div class="col-6 mb-3">
                                     <p class="mb-0 font-weight-bold">Account</p>
-                                        @if(Auth::user()->customer->account_status == 1)
+                                        @if(Auth::user()->customer->account_status ?? '' == 1)
                                             <div class="badge badge-info" style="border-radius: 0.25rem;">
                                                 Pending
                                             </div>
-                                        @elseif(Auth::user()->customer->account_status == 2)
+                                        @elseif(Auth::user()->customer->account_status ?? '' == 2)
                                             <div class="badge badge-success" style="border-radius: 0.25rem;">
                                                 Verified
                                             </div>
-                                        @elseif(Auth::user()->customer->account_status == 3)
+                                        @elseif(Auth::user()->customer->account_status ?? '' == 3)
                                             <div class="badge badge-danger" style="border-radius: 0.25rem;">
                                                 Rejected
                                             </div>
@@ -200,15 +200,15 @@
                                 </div>
                                 <div class="col-sm-6 col-6 mb-2">
                                     <p class="mb-0 font-weight-bold">Address</p>
-                                    @if(Auth::user()->customer->location_status == 1)
+                                    @if(Auth::user()->customer->location_status ?? '' == 1)
                                         <div class="badge badge-info" style="border-radius: 0.25rem;">
                                             Pending
                                         </div>
-                                    @elseif(Auth::user()->customer->location_status == 2)
+                                    @elseif(Auth::user()->customer->location_status ?? '' == 2)
                                         <div class="badge badge-success" style="border-radius: 0.25rem;">
                                             Verified
                                         </div>
-                                    @elseif(Auth::user()->customer->location_status == 3)
+                                    @elseif(Auth::user()->customer->location_status ?? '' == 3)
                                         <div class="badge badge-danger" style="border-radius: 0.25rem;">
                                             Rejected
                                         </div>
@@ -220,15 +220,15 @@
                                 </div>
                                 <div class="col-sm-6 col-6">
                                     <p class="mb-0 font-weight-bold">Phone Number</p>
-                                    @if(Auth::user()->customer->location_status == 1)
+                                    @if(Auth::user()->customer->location_status ?? '' == 1)
                                         <div class="badge badge-info" style="border-radius: 0.25rem;">
                                             Pending
                                         </div>
-                                    @elseif(Auth::user()->customer->location_status == 2)
+                                    @elseif(Auth::user()->customer->location_status ?? '' == 2)
                                         <div class="badge badge-success" style="border-radius: 0.25rem;">
                                             Verified
                                         </div>
-                                    @elseif(Auth::user()->customer->location_status == 3)
+                                    @elseif(Auth::user()->customer->location_status ?? '' == 3)
                                         <div class="badge badge-danger" style="border-radius: 0.25rem;">
                                             Rejected
                                         </div>
