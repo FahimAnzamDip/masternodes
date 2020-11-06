@@ -98,11 +98,11 @@ class UsersController extends Controller
     public function usersKyc() {
         $title = "MPP Admin - Users KYC";
         $customers = Customer::where('identity_status', '!=', 2)
-                                ->where('location_status', '!=', 2)
-                                ->where('account_status', '!=', 2)
-                                ->where('identity_status', '!=', 3)
-                                ->where('location_status', '!=', 3)
-                                ->where('account_status', '!=', 3);
+                                ->orWhere('location_status', '!=', 2)
+                                ->orWhere('account_status', '!=', 2)
+                                ->orWhere('identity_status', '!=', 3)
+                                ->orWhere('location_status', '!=', 3)
+                                ->orWhere('account_status', '!=', 3);
 
         return view('admin.users.users-kyc', [
             'title' => $title,
