@@ -87,7 +87,7 @@ class MessagesController extends Controller
 
         toast('Message Sent!', 'success');
 
-        return redirect()->route('contact.page');
+        return redirect()->back();
     }
 
     /**

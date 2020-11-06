@@ -30,6 +30,6 @@ class VerifyCodeMail extends Mailable implements ShouldQueue
     public function build()
     {
         return $this->subject('Secret Code!')
-                    ->view('emails.message.secret-code');
+                    ->view('emails.kyc.secret-code');
     }
 }

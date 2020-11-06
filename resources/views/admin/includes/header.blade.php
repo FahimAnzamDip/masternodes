@@ -129,11 +129,6 @@
                     <i class="fas fa-envelope"></i> <span>Messages <span class="badge badge-primary" style="width: 2rem;">{{ \App\Models\Message::where('read', 0)->count() }}</span></span>
                 </a>
             </li>
-            <li class="nav-item {{ request()->is('chat*') ? 'active' : '' }}">
-                <a href="{{ route('chats') }}" class="nav-link">
-                    <i class="fab fa-facebook-messenger"></i> <span>Live Chat <span class="badge badge-info" style="width: 2rem;">{{ \App\Models\Chat::where('read', 0)->where('receiver_id', Auth::user()->id)->where('type', 1)->count() }}</span></span>
-                </a>
-            </li>
 
             <li class="menu-header">Event</li>
             <li class="nav-item {{ request()->is('admin/calendar') ? 'active' : '' }}">

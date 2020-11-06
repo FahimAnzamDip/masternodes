@@ -50,33 +50,33 @@
                     <i class="fas fa-cog"></i> Account Settings
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-bell"></i> Notification Settings
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-at"></i> Social Networks
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-dollar-sign"></i> Payment Method
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-check"></i> Security & Login
                 </a>
 
                 <div class="dropdown-divider"></div>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-credit-card"></i> View Balance
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-money-bill-alt"></i> Deposit
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-money-bill-wave"></i> Withdraw
                 </a>
 
@@ -109,6 +109,12 @@
             <a href="{{ route('home.page') }}">MPP</a>
         </div>
         <ul class="sidebar-menu mt-2">
+            <li class="menu-header">Dashboard</li>
+            <li class="nav-item border border-light {{ request()->is('user/home') ? 'active' : '' }}">
+                <a href="{{ route('user.home') }}">
+                    <i class="fas fa-fire"></i> Dashboard
+                </a>
+            </li>
             <li class="menu-header">Calculator</li>
             <li class="nav-item border border-light {{ request()->is('user/calculator') ? 'active' : '' }}">
                 <a href="{{ route('user.calculator') }}">
@@ -135,12 +141,12 @@
 
             <li class="menu-header">Offer/Bounties</li>
             <li class="nav-item border border-light">
-                <a href="">
+                <a href="#">
                     <i class="fas fa-box-open"></i> Live Bounties
                 </a>
             </li>
             <li class="nav-item border border-light">
-                <a href="">
+                <a href="#">
                     <i class="fas fa-box-open"></i> Expired
                 </a>
             </li>
