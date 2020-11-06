@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -38,7 +39,7 @@ class CreateNewUser implements CreatesNewUsers
             'terms'            => ['required'],
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'email'            => $input['email'],
             'username'         => $input['username'],
             'password'         => Hash::make($input['password']),
@@ -55,5 +56,11 @@ class CreateNewUser implements CreatesNewUsers
             'terms'            => $input['terms'],
             'referral_id'      => Str::upper(Str::random(5) . $input['username'] . Str::random(5))
         ]);
+
+        Customer::create([
+            'user_id' => $user->id
+        ]);
+
+        return $user;
     }
 }
