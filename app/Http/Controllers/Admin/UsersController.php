@@ -233,4 +233,24 @@ class UsersController extends Controller
             'customers' => $customers
         ]);
     }
+
+    public function usersKycDelete($id) {
+        $customer = Customer::find($id);
+
+        if ($customer->identity_file ?? '') {
+            Storage::delete('public/identity_files/'.$customer->identity_file);
+        }
+        if ($customer->location_file ?? '') {
+            Storage::delete('public/location_files/'.$customer->location_file);
+        }
+        if ($customer->customer_image ?? '') {
+            Storage::delete('public/customer_images/'.$customer->customer_image);
+        }
+
+        $customer->delete();
+
+        toast('User KYC Deleted!', 'warning');
+
+        return redirect()->route('admin.users.kyc');
+    }
 }

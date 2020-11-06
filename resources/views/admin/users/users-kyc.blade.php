@@ -106,7 +106,7 @@
                                     <td>
                                         <a href="{{ route('admin.users.kyc.show', $customer->id) }}" class="btn btn-primary mb-1"><i class="fas fa-eye"></i></a>
 
-                                        <a href="#" id="delete" class="btn btn-danger mb-1"><i class="fas fa-trash"></i></a>
+                                        <a href="{{ route('admin.users.kyc.delete', $customer->id) }}" id="delete" class="btn btn-danger mb-1"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

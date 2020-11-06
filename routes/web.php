@@ -93,6 +93,7 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/users/banned', 'UsersController@bannedUsers')->name('users.banned');
         Route::get('/admin/users/kyc', 'UsersController@usersKyc')->name('admin.users.kyc');
         Route::get('/admin/users/kyc/show/{id}', 'UsersController@usersKycShow')->name('admin.users.kyc.show');
+        Route::get('/admin/users/kyc/delete/{id}', 'UsersController@usersKycDelete')->name('admin.users.kyc.delete');
         Route::get('/admin/users/kyc/approved', 'UsersController@approvedUsers')->name('admin.users.kyc.approved');
         Route::get('/admin/users/kyc/rejected', 'UsersController@rejectedUsers')->name('admin.users.kyc.rejected');
         Route::post('/admin/users/kyc/verify', 'UsersController@verifyUser')->name('admin.users.kyc.verify');
