@@ -200,10 +200,13 @@
                                     <strong>Sent Code: {{ $customer->admin_verify_code }}</strong>
                                 </div>
                             @endif
-                            @if($customer->admin_verify_code == $customer->verify_code)
-                                <div class="alert alert-success mt-3">
-                                    <strong>Matched with the code provide by {{ $customer->user->username }}: {{ $customer->admin_verify_code }}</strong>
-                                </div>
+
+                            @if($customer->admin_verify_code != 0)
+                                @if($customer->admin_verify_code == $customer->verify_code)
+                                    <div class="alert alert-success mt-3">
+                                        <strong>Matched with the code provide by {{ $customer->user->username }}: {{ $customer->admin_verify_code }}</strong>
+                                    </div>
+                                @endif
                             @endif
                         </div>
                     </div>
