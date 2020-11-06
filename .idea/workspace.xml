@@ -21,26 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="857608be-2114-4af8-9c98-f0d754415637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NormalCoinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NormalCoinsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedirectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedirectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/AuthorizeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/AuthorizeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/coins/normal-coins/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/back-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/back-layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front-layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/coins.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/coins.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/countdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/countdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/roadmap.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/roadmap.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/profile/my-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/profile/my-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessagesController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +318,7 @@
       <workItem from="1604395024474" duration="27579000" />
       <workItem from="1604476589106" duration="36193000" />
       <workItem from="1604561325905" duration="34991000" />
-      <workItem from="1604642344502" duration="34330000" />
+      <workItem from="1604642344502" duration="35109000" />
     </task>
     <servers />
   </component>

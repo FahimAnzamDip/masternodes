@@ -54,7 +54,7 @@ class MessagesController extends Controller
         if ($request->hasFile('attachment')) {
             $uploaded_img = $request->file('attachment');
 
-            $message_id = Message::insertGetId([
+            $message = Message::create([
                 'first_name' => $request->first_name,
                 'last_name'  => $request->last_name,
                 'email'      => $request->email,
@@ -63,11 +63,11 @@ class MessagesController extends Controller
                 'created_at' => Carbon::now()
             ]);
 
-            $img_name = 'message_' . $message_id . '.' . $uploaded_img->getClientOriginalExtension();
+            $img_name = 'message_' . $message->id . '.' . $uploaded_img->getClientOriginalExtension();
             $image = Image::make($uploaded_img)->encode($uploaded_img->getClientOriginalExtension());
             Storage::put('public/message_attachments/' . $img_name, $image);
 
-            Message::find($message_id)->update([
+            Message::find($message->id)->update([
                 'attachment' => $img_name
             ]);
         } else {
