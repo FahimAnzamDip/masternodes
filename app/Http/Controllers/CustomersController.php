@@ -15,7 +15,7 @@ class CustomersController extends Controller
         $this->middleware([
             'user', 'verified', 'authorize'
         ])->only([
-            'kyc',
+            'userKyc',
             'identitySubmit',
             'locationSubmit',
             'accountSubmit'
