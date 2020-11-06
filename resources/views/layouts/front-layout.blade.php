@@ -54,9 +54,9 @@
 </div>
 
 <!-- start back-to-top -->
-{{--<div id="back-to-top">--}}
-{{--    <i class="fas fa-angle-up" title="Go top"></i>--}}
-{{--</div>--}}
+<div id="back-to-top">
+    <i class="fas fa-angle-up" title="Go top"></i>
+</div>
 <!-- end back-to-top -->
 
 @include('sweetalert::alert')
@@ -105,6 +105,17 @@
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
     })();
+
+    @auth
+        @if(Auth::user()->role == 2)
+        Tawk_API.onLoad = function(){
+        Tawk_API.setAttributes({
+            'name'  : '{{ Auth::user()->username }}',
+            'email' : '{{ Auth::user()->email }}',
+        }, function(error){});
+    }
+    @endif
+    @endauth
 </script>
 <!--End of Tawk.to Script-->
 </body>

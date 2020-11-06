@@ -6,7 +6,7 @@
         </ul>
     </form>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle mt-1"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
+        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Notifications
                     <div class="float-right">
@@ -29,8 +29,10 @@
                 </div>
             </div>
         </li>
-        <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <div class="d-sm-none d-lg-inline-block"><i class="fas fa-user mr-1"></i> {{ Auth::user()->username }}</div></a>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <i class="fas fa-user"></i> {{ Auth::user()->username }}
+            </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> My Profile
@@ -72,6 +74,18 @@
                 </a>
             </li>
 
+            <li class="menu-header">Users Management</li>
+            <li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
+                <a href="{{ route('users.index') }}" class="nav-link">
+                    <i class="fas fa-users"></i><span>Users</span>
+                </a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/users/kyc*') ? 'active' : '' }}">
+                <a href="{{ route('admin.users.kyc') }}" class="nav-link">
+                    <i class="fas fa-users-cog"></i><span>User KYC</span>
+                </a>
+            </li>
+
             <li class="menu-header">Coins</li>
             <li class="nav-item {{ request()->is('special-coins*') ? 'active' : '' }}">
                 <a href="{{ route('special-coins.index') }}" class="nav-link">
@@ -81,7 +95,7 @@
 
             <li class="nav-item {{ request()->is('normal-coins*') ? 'active' : '' }}">
                 <a href="{{ route('normal-coins.index') }}" class="nav-link">
-                    <i class="fab fa-bitcoin"></i> <span>Normal Coins</span>
+                    <i class="fab fa-bitcoin"></i> <span>Masternode Coins</span>
                 </a>
             </li>
 

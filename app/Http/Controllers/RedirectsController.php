@@ -8,14 +8,21 @@ use Illuminate\Support\Facades\Auth;
 class RedirectsController extends Controller
 {
     public function redirectTo() {
-        $role = Auth::user()->role;
+        if (Auth::user()->banned == 1) {
+            //Logout
+            Auth::logout();
+            //Banned User
+            return redirect()->route('login')->with([
+                'status' => 'Your account is banned! Please contact support.'
+            ]);
+        }
 
-        if ($role == 1) {
+        if (Auth::user()->role == 1) {
             //Admin
             return redirect()->route('admin.home');
         } else {
             //User
-            return redirect()->route('user.calculator');
+            return redirect()->route('user.home');
         }
     }
 }

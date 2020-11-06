@@ -3,11 +3,11 @@
 @section('main-content')
     <section class="section">
         <div class="section-header">
-            <h1>Create Normal Coin</h1>
+            <h1>Create Masternode Coin</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="{{ route('special-coins.index') }}">Normal Coins</a></div>
-                <div class="breadcrumb-item">Create New Normal Coin</div>
+                <div class="breadcrumb-item"><a href="{{ route('normal-coins.index') }}">Masternode Coins</a></div>
+                <div class="breadcrumb-item">Create New Masternode Coin</div>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
                     @include('admin.includes.alerts')
                     <div class="card">
                         <div class="card-header">
-                            <h4>Normal Coin</h4>
+                            <h4>Masternode Coin</h4>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('normal-coins.store') }}" method="POST" enctype="multipart/form-data">
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group d-flex justify-content-end">
-                                    <button class="btn btn-primary" type="submit">Create Normal Coins</button>
+                                    <button class="btn btn-primary" type="submit">Create Masternode Coins</button>
                                 </div>
                             </form>
                         </div>

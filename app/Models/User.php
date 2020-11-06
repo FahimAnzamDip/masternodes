@@ -34,6 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'referral_id',
         'newsletter',
         'terms',
+        'banned'
     ];
 
     /**
@@ -65,5 +66,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function posts() {
         return $this->hasMany(Post::class);
+    }
+
+    public function customer() {
+        return $this->hasOne(Customer::class);
     }
 }

@@ -40,27 +40,41 @@
                             <div class="row">
                                 <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
                                     <p class="mb-0 font-weight-bold">Account</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
+                                    <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                            <strong>Not Verified</strong>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0">
                                     <p class="mb-0 font-weight-bold">Email</p>
-                                    <div class="badge badge-success" style="border-radius: 0.25rem;">
-                                        <strong>Verified</strong>
-                                    </div>
+                                    @if(Auth::user()->email_verified_at)
+                                        <div class="badge badge-success" style="border-radius: 0.25rem;">
+                                            <strong>Verified</strong>
+                                        </div>
+                                    @else
+                                        <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                            <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                                <strong>Not Verified</strong>
+                                            </div>
+                                        </a>
+                                    @endif
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6">
                                     <p class="mb-0 font-weight-bold">Address</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
+                                    <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                            <strong>Not Verified</strong>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-6">
                                     <p class="mb-0 font-weight-bold">Phone Number</p>
-                                    <div class="badge badge-danger" style="border-radius: 0.25rem;">
-                                        <strong>Not Verified</strong>
-                                    </div>
+                                    <a href="{{ route('user.kyc') }}" data-toggle="tooltip" data-title="Click to Verify" data-position="top">
+                                        <div class="badge badge-warning" style="border-radius: 0.25rem;">
+                                            <strong>Not Verified</strong>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -15,8 +15,8 @@ class PagesController extends Controller
     public function index() {
         $title = "MPP - Home";
         $posts = Post::where('post_status', 1)->latest()->take(3)->get();
-        $special_coins = SpecialCoin::latest()->take(18)->get();
-        $normal_coins = NormalCoin::latest()->take(18)->get();
+        $special_coins = SpecialCoin::all();
+        $normal_coins = NormalCoin::all();
         $timer = Countdown::first();
 
         return view('home-page', [

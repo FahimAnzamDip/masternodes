@@ -42,7 +42,7 @@
                     <i class="fas fa-bolt"></i> 2FA Activation
                 </a>
 
-                <a href="" class="dropdown-item has-icon">
+                <a href="{{ route('user.kyc') }}" class="dropdown-item has-icon">
                     <i class="fas fa-cogs"></i> KYC
                 </a>
 

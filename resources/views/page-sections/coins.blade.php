@@ -11,12 +11,12 @@
         </div><!-- end row -->
         <div class="row mt-2">
             @forelse($special_coins as $special_coin)
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
                     <a href="{{ $special_coin->coin_link }}" class="text-dark">
-                        <div class="card">
+                        <div class="card coin">
                             <div class="card-body text-center">
-                                <img width="64" src="{{ asset('storage/special_coin_images') . '/' . $special_coin->coin_image }}" alt="special coin" class="rounded-circle mb-3">
-                                <h5 class="font-weight-normal text-uppercase">{{ $special_coin->coin_name }}</h5>
+                                <img width="64" src="{{ asset('storage/special_coin_images') . '/' . $special_coin->coin_image }}" alt="special coin" class="mb-3">
+                                <h6 class="font-weight-normal text-uppercase">{{ $special_coin->coin_name }}</h6>
                                 <p class="text-uppercase">({{ $special_coin->coin_short_name }})</p>
                             </div>
                         </div>
@@ -45,12 +45,12 @@
         </div><!-- end row -->
         <div class="row mt-2">
             @forelse($normal_coins as $normal_coin)
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
                     <a href="{{ $normal_coin->coin_link }}" class="text-dark">
-                        <div class="card">
+                        <div class="card coin">
                             <div class="card-body text-center">
-                                <img width="64" src="{{ asset('storage/normal_coin_images') . '/' . $normal_coin->coin_image }}" alt="logo" class="rounded-circle mb-3">
-                                <h5 class="font-weight-normal text-uppercase">{{ $normal_coin->coin_name }}</h5>
+                                <img width="64" src="{{ asset('storage/normal_coin_images') . '/' . $normal_coin->coin_image }}" alt="logo" class="mb-3">
+                                <h6 class="font-weight-normal text-uppercase">{{ $normal_coin->coin_name }}</h6>
                                 <p class="text-uppercase">({{ $normal_coin->coin_short_name }})</p>
                             </div>
                         </div>

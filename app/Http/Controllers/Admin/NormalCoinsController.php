@@ -18,7 +18,7 @@ class NormalCoinsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $title = "MPP Admin - Normal Coins";
+        $title = "MPP Admin - Masternode Coins";
         $coins = NormalCoin::latest()->get();
 
         return view('admin.coins.normal-coins.index', [
@@ -33,7 +33,7 @@ class NormalCoinsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $title = "MPP Admin - Create Normal Coin";
+        $title = "MPP Admin - Create Masternode Coin";
 
         return view('admin.coins.normal-coins.create', [
             'title' => $title
@@ -72,7 +72,7 @@ class NormalCoinsController extends Controller
             'coin_image' => $img_name
         ]);
 
-        toast('Normal Coin Created!', 'success');
+        toast('Masternode Coin Created!', 'success');
 
         return redirect()->route('normal-coins.index');
     }
@@ -84,7 +84,7 @@ class NormalCoinsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $title = "MPP Admin - Edit Normal Coin";
+        $title = "MPP Admin - Edit Masternode Coin";
         $coin = NormalCoin::find($id);
 
         return view('admin.coins.normal-coins.edit', [
@@ -129,7 +129,7 @@ class NormalCoinsController extends Controller
             'coin_link' => $request->coin_link
         ]);
 
-        toast('Normal Coin Updated!', 'success');
+        toast('Masternode Coin Updated!', 'success');
 
         return redirect()->route('normal-coins.index');
     }
@@ -146,7 +146,7 @@ class NormalCoinsController extends Controller
         Storage::delete('public/normal_coin_images/'.$coin->coin_image);
         $coin->delete();
 
-        toast('Normal Coin Deleted!', 'warning');
+        toast('Masternode Coin Deleted!', 'warning');
 
         return redirect()->route('normal-coins.index');
     }

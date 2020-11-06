@@ -88,8 +88,9 @@
                     justify-content: space-between;
                 }
                 .count-down-section #clock>div {
-                    flex-basis: calc(100% * (1/2) - 15px);
-                    margin-bottom: 30px;
+                    flex-basis: calc(100% * (1/5) - 15px);
+                    border-bottom-left-radius: 15px;
+                    border-top-right-radius: 15px;
                 }
             }
 
@@ -115,6 +116,17 @@
             .count-down-section #clock .box span {
                 font-size: 14px;
                 text-transform: uppercase;
+            }
+
+            @media (max-width: 767px) {
+                .count-down-section #clock .box>div {
+                    font-size: 25px;
+                    line-height: 1.3em;
+                }
+                .count-down-section #clock .box span {
+                    font-size: 10px;
+                    text-transform: uppercase;
+                }
             }
         </style>
     @endsection

@@ -33,7 +33,7 @@ class CreateNewUser implements CreatesNewUsers
             'city'             => ['required', 'string', 'max:255'],
             'zip_code'         => ['required', 'max:255'],
             'phone'            => ['required', 'max:255'],
-            'referrar_id'      => ['nullable', 'max:255'],
+            'referrer_id'      => ['nullable', 'max:255'],
             'newsletter'       => ['nullable'],
             'terms'            => ['required'],
         ])->validate();

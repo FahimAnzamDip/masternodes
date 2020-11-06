@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('address_line_one')->nullable();
-            $table->string('address_line_two')->nullable();
+            $table->text('address_line_one')->nullable();
+            $table->text('address_line_two')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('zip_code')->nullable();
@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('referral_id')->nullable()->unique();
             $table->string('newsletter')->nullable();
             $table->string('terms')->nullable();
+            $table->boolean('banned')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

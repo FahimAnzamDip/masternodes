@@ -3,17 +3,17 @@
 @section('main-content')
     <section class="section">
         <div class="section-header">
-            <h1>Normal Coins</h1>
+            <h1>Masternode Coins</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-                <div class="breadcrumb-item ">Normal Coins</div>
+                <div class="breadcrumb-item ">Masternode Coins</div>
             </div>
         </div>
 
         <div class="section-body">
             <div class="row mb-3">
                 <div class="col-md-12 d-flex justify-content-end">
-                    <a href="{{ route('normal-coins.create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create Normal Coin</a>
+                    <a href="{{ route('normal-coins.create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create Masternode Coin</a>
                 </div>
             </div>
             <div class="card">

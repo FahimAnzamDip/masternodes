@@ -41,6 +41,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/message/send', 'ChatsController@messageSend');
     Route::post('/message/image/send', 'ChatsController@messageImageSend');
     Route::get('/chats/delete/{id}', 'ChatsController@messagesDelete');
+
+    //KYC Know Your Customer
+    Route::get('/user/kyc', 'CustomersController@userKyc')->name('user.kyc');
+    Route::post('/user/kyc/identity/submit', 'CustomersController@identitySubmit')->name('user.kyc.identity.submit');
+    Route::post('/user/kyc/location/submit', 'CustomersController@locationSubmit')->name('user.kyc.location.submit');
+    Route::post('/user/kyc/account/submit', 'CustomersController@accountSubmit')->name('user.kyc.account.submit');
 });
 
 //User Middleware and Namespace
@@ -80,6 +86,19 @@ Route::group(['namespace' => 'Admin'], function () {
         //Admin Dashboard
         Route::get('/admin/home', 'AdminHomeController@index')->name('admin.home');
 
+        //Users Management
+        Route::get('/users/delete/{id}', 'UsersController@delete')->name('users.delete');
+        Route::get('/users/ban/{id}', 'UsersController@ban')->name('users.ban');
+        Route::get('/users/unban/{id}', 'UsersController@unban')->name('users.unban');
+        Route::get('/users/banned', 'UsersController@bannedUsers')->name('users.banned');
+        Route::get('/admin/users/kyc', 'UsersController@usersKyc')->name('admin.users.kyc');
+        Route::get('/admin/users/kyc/show/{id}', 'UsersController@usersKycShow')->name('admin.users.kyc.show');
+        Route::get('/admin/users/kyc/approved', 'UsersController@approvedUsers')->name('admin.users.kyc.approved');
+        Route::get('/admin/users/kyc/rejected', 'UsersController@rejectedUsers')->name('admin.users.kyc.rejected');
+        Route::post('/admin/users/kyc/verify', 'UsersController@verifyUser')->name('admin.users.kyc.verify');
+        Route::post('/admin/users/kyc/send-code', 'UsersController@sendCode')->name('admin.users.kyc.send-code');
+        Route::resource('users', 'UsersController')->except('edit', 'update', 'destroy');
+
         //Post Categories
         Route::get('/categories/delete/{id}', 'CategoriesController@delete')->name('categories.delete');
         Route::resource('categories', 'CategoriesController')->except('show', 'destroy');
@@ -108,10 +127,10 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/admin/countdown', 'CountdownController@countdown')->name('admin.countdown');
         Route::post('/countdown/update/{id}', 'CountdownController@update')->name('countdown.update');
 
-        //User Profile
+        //Admin Profile
         Route::get('/admin/profile', 'ProfileController@profile')->name('admin.profile');
         Route::post('/admin/profile/update', 'ProfileController@profileUpdate')->name('admin.profile.update');
-        //User Account Setting
+        //Admin Account Setting
         Route::get('/admin/account-setting', 'ProfileController@accountSetting')->name('admin.account.setting');
         Route::post('/admin/account-setting/update', 'ProfileController@accountSettingUpdate')->name('admin.account.setting.update');
 

@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Sujip\Ipstack\Ipstack;
 
-class AuthorizeMail extends Mailable
+class AuthorizeMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
