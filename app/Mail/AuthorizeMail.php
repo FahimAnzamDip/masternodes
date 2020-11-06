@@ -17,6 +17,7 @@ class AuthorizeMail extends Mailable implements ShouldQueue
      * @var mixed
      */
     protected $authorize;
+    protected $browser;
 
     /**
      * Create a new message instance.
