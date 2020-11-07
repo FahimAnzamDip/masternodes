@@ -67,7 +67,7 @@ class CustomersController extends Controller
     public function locationSubmit(Request $request) {
         $request->validate([
             'location_file_type' => 'required',
-            'location_file'      => 'required|image|mimes:jpeg,jpg,png|max:16000'
+            'location_file'      => 'required|image|mimes:jpeg,jpg,png|max:2048'
         ]);
 
         $customer = Customer::updateOrCreate(
