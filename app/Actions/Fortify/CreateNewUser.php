@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\Customer;
+use App\Models\Newsletter;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -60,6 +61,12 @@ class CreateNewUser implements CreatesNewUsers
         Customer::create([
             'user_id' => $user->id
         ]);
+
+        if ($user->newsletter == 1) {
+            Newsletter::create([
+                'email' => $user->email
+            ]);
+        }
 
         return $user;
     }

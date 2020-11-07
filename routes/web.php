@@ -82,6 +82,10 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/posts/delete/{id}', 'PostsController@delete')->name('posts.delete');
     Route::resource('posts', 'PostsController')->except('destroy');
 
+    //Newsletters
+    Route::get('/newsletters/delete/{id}', 'NewslettersController@delete')->name('newsletters.delete');
+    Route::resource('newsletters', 'NewslettersController')->except('edit', 'update', 'show', 'destroy', 'create');
+
     Route::group(['middleware' => ['auth', 'admin']], function () {
         //Admin Dashboard
         Route::get('/admin/home', 'AdminHomeController@index')->name('admin.home');
@@ -98,6 +102,7 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/admin/users/kyc/rejected', 'UsersController@rejectedUsers')->name('admin.users.kyc.rejected');
         Route::post('/admin/users/kyc/verify', 'UsersController@verifyUser')->name('admin.users.kyc.verify');
         Route::post('/admin/users/kyc/send-code', 'UsersController@sendCode')->name('admin.users.kyc.send-code');
+        Route::get('/admins', 'UsersController@admins')->name('admins.index');
         Route::resource('users', 'UsersController')->except('edit', 'update', 'destroy');
 
         //Post Categories
@@ -138,6 +143,10 @@ Route::group(['namespace' => 'Admin'], function () {
         //Contact Page
         Route::get('/admin/contact-page', 'ContactPageController@index')->name('admin.contact-page');
         Route::post('/admin/contact-page/update/{id}', 'ContactPageController@update')->name('admin.contact-page.update');
+
+        //Stats
+        Route::get('/admin/stats', 'StatsController@index')->name('stats.index');
+        Route::post('/admin/stats/update', 'StatsController@update')->name('stats.update');
     });
 });
 

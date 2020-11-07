@@ -72,9 +72,9 @@
                         <span class="footer-title-shape"></span>
                     </h3>
                     <ul class="footer-link company-link">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{{ route('about.page') }}">About Us</a></li>
                         <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">MPP Blog</a></li>
+                        <li><a href="{{ route('blog.page') }}">MPP Blog</a></li>
                         <li><a href="#">MPP Job</a></li>
                         <li><a href="#">Terms Of Use</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -94,7 +94,7 @@
                         <span class="footer-title-shape"></span>
                     </h3>
                     <ul class="footer-link company-link">
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{ route('contact.page') }}">Contact Us</a></li>
                         <li><a href="#">Apply for IEO</a></li>
                         <li><a href="#">Listing Coins</a></li>
                         <li><a href="#">Partnership</a></li>

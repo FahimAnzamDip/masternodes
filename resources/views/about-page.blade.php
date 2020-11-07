@@ -61,7 +61,7 @@
                     <a class="mfp-iframe video-play-btn" href="https://www.youtube.com/watch?v=GmOzih6I1zs" title="Play Video">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <span class="heboo-text">POS</span>
+                    <span class="heboo-text" style="font-size: 1rem;">MPP-POS-POOL</span>
                 </div><!-- end about-img-box -->
             </div><!-- end col-lg-5 -->
         </div><!-- end row -->

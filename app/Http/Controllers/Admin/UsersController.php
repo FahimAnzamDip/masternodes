@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,11 +23,21 @@ class UsersController extends Controller
      */
     public function index() {
         $title = "MPP Admin - Users Management";
-        $users = User::where('id', '!=', Auth::user()->id)->where('banned', '!=', 1)->latest()->get();
+        $users = User::where('id', '!=', Auth::user()->id)->where('banned', '!=', 1)->where('role', 2)->latest()->get();
 
         return view('admin.users.index', [
             'title' => $title,
             'users' => $users
+        ]);
+    }
+
+    public function admins() {
+        $title = "MPP - Admins";
+        $admins = User::where('role', 1)->latest()->get();
+
+        return view('admin.users.admins', [
+            'title'  => $title,
+            'admins' => $admins
         ]);
     }
 
@@ -36,7 +47,11 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        $title = "MPP - Create Admin";
+
+        return view('admin.users.create-admin', [
+            'title' => $title
+        ]);
     }
 
     /**
@@ -46,7 +61,23 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        $request->validate([
+            'username' => 'required|min:5|max:190|unique:users',
+            'email'    => 'required|email|max:190|unique:users',
+            'password' => 'required|min:8|confirmed'
+        ]);
+
+        User::create([
+            'username'   => $request->username,
+            'email'      => $request->email,
+            'password'   => Hash::make($request->password),
+            'role'       => 1,
+            'created_at' => Carbon::now()
+        ]);
+
+        toast('Admin Created!', 'success');
+
+        return redirect()->route('admins.index');
     }
 
     /**
@@ -56,7 +87,13 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        $title = "MPP Admin - User Details";
+        $user = User::findOrFail($id);
+
+        return view('admin.users.show-users', [
+            'title' => $title,
+            'user'  => $user
+        ]);
     }
 
     /**
@@ -69,13 +106,13 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         if ($user->customer->identity_file ?? '') {
-            Storage::delete('public/identity_files/'.$user->customer->identity_file);
+            Storage::delete('public/identity_files/' . $user->customer->identity_file);
         }
         if ($user->customer->location_file ?? '') {
-            Storage::delete('public/location_files/'.$user->customer->location_file);
+            Storage::delete('public/location_files/' . $user->customer->location_file);
         }
         if ($user->customer->customer_image ?? '') {
-            Storage::delete('public/customer_images/'.$user->customer->customer_image);
+            Storage::delete('public/customer_images/' . $user->customer->customer_image);
         }
 
         $user->delete();
@@ -100,7 +137,7 @@ class UsersController extends Controller
         $customers = Customer::latest()->get();
 
         return view('admin.users.users-kyc', [
-            'title' => $title,
+            'title'     => $title,
             'customers' => $customers
         ]);
     }
@@ -110,7 +147,7 @@ class UsersController extends Controller
         $customer = Customer::find($id);
 
         return view('admin.users.users-kyc-show', [
-            'title' => $title,
+            'title'    => $title,
             'customer' => $customer
         ]);
     }
@@ -146,7 +183,7 @@ class UsersController extends Controller
     public function sendCode(Request $request) {
         $request->validate([
             'admin_verify_code' => 'required',
-            'customer_id' => 'required'
+            'customer_id'       => 'required'
         ]);
 
         $id = $request->customer_id;
@@ -169,15 +206,15 @@ class UsersController extends Controller
         $request->validate([
             'identity_status' => 'required',
             'location_status' => 'required',
-            'account_status' => 'required',
-            'customer_id' => 'required'
+            'account_status'  => 'required',
+            'customer_id'     => 'required'
         ]);
 
         $id = $request->customer_id;
 
         if ($request->identity_status == 2) {
             Customer::findOrFail($id)->update([
-                'identity_status' => $request->identity_status,
+                'identity_status'      => $request->identity_status,
                 'identity_verified_at' => Carbon::now()
             ]);
         } else {
@@ -188,9 +225,9 @@ class UsersController extends Controller
 
         if ($request->location_status == 2) {
             Customer::findOrFail($id)->update([
-                'location_status' => $request->location_status,
+                'location_status'     => $request->location_status,
                 'address_verified_at' => Carbon::now(),
-                'phone_verified_at' => Carbon::now()
+                'phone_verified_at'   => Carbon::now()
             ]);
         } else {
             Customer::findOrFail($id)->update([
@@ -200,7 +237,7 @@ class UsersController extends Controller
 
         if ($request->account_status == 2) {
             Customer::findOrFail($id)->update([
-                'account_status' => $request->account_status,
+                'account_status'      => $request->account_status,
                 'account_verified_at' => Carbon::now()
             ]);
         } else {
@@ -219,7 +256,7 @@ class UsersController extends Controller
         $customers = Customer::where('identity_status', 2)->where('location_status', 2)->where('account_status', 2)->latest()->get();
 
         return view('admin.users.kyc-approved', [
-            'title' => $title,
+            'title'     => $title,
             'customers' => $customers
         ]);
     }
@@ -229,7 +266,7 @@ class UsersController extends Controller
         $customers = Customer::where('identity_status', 3)->where('location_status', 3)->where('account_status', 3)->latest()->get();
 
         return view('admin.users.kyc-rejected', [
-            'title' => $title,
+            'title'     => $title,
             'customers' => $customers
         ]);
     }
@@ -238,13 +275,13 @@ class UsersController extends Controller
         $customer = Customer::find($id);
 
         if ($customer->identity_file ?? '') {
-            Storage::delete('public/identity_files/'.$customer->identity_file);
+            Storage::delete('public/identity_files/' . $customer->identity_file);
         }
         if ($customer->location_file ?? '') {
-            Storage::delete('public/location_files/'.$customer->location_file);
+            Storage::delete('public/location_files/' . $customer->location_file);
         }
         if ($customer->customer_image ?? '') {
-            Storage::delete('public/customer_images/'.$customer->customer_image);
+            Storage::delete('public/customer_images/' . $customer->customer_image);
         }
 
         $customer->delete();

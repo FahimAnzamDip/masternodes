@@ -1,8 +1,9 @@
 <!-- ================================
    START NEWSLETTER AREA
 ================================= -->
-<section class="newsleller-area">
+<section class="newsleller-area" id="newsleller-area">
     <div class="container">
+        @include('user.includes.alerts')
         <div class="subscriber-box">
             <div class="row">
                 <div class="col-lg-7">
@@ -16,9 +17,10 @@
                 <!-- end col-lg-7 -->
                 <div class="col-lg-5">
                     <div class="subscriber-wrap">
-                        <form action="#">
+                        <form action="{{ route('newsletters.store') }}" method="POST">
+                            @csrf
                             <div class="subscriber-form">
-                                <input type="text" class="form-control" placeholder="Enter your email" />
+                                <input type="email" class="form-control" placeholder="Enter your email" required name="email"/>
                                 <i class="fa fa-envelope"></i>
                                 <button class="theme-btn">subscribe</button>
                             </div>

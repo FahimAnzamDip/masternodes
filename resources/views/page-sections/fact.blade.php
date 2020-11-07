@@ -7,7 +7,7 @@
                     <div class="funfact-icon">
                         <i class="flaticon-032-bitcoin-3 funfact__icon"></i>
                     </div>
-                    <span class="funfact__number counter">85389</span>
+                    <span class="funfact__number counter">{{ $stat->transaction_count }}</span>
                     <p class="funfact__meta">24H Transactions</p>
                 </div>
                 <!-- end funfact-item-->
@@ -18,7 +18,7 @@
                     <div class="funfact-icon">
                         <i class="flaticon-001-bitcoin-20 funfact__icon"></i>
                     </div>
-                    <span class="funfact__number counter">6540</span>
+                    <span class="funfact__number counter">{{ $stat->masternodes_count }}</span>
                     <p class="funfact__meta">Active Masternodes</p>
                 </div>
                 <!-- end funfact-item-->
@@ -29,7 +29,7 @@
                     <div class="funfact-icon">
                         <i class="flaticon-034-consulting funfact__icon"></i>
                     </div>
-                    <span class="funfact__number counter">7540</span>
+                    <span class="funfact__number counter">{{ $stat->community_count }}</span>
                     <p class="funfact__meta">Community</p>
                 </div>
                 <!-- end funfact-item-->

@@ -74,7 +74,12 @@
                 </a>
             </li>
 
-            <li class="menu-header">Users Management</li>
+            <li class="menu-header">User Management</li>
+            <li class="nav-item {{ request()->is('admins*') ? 'active' : '' }}">
+                <a href="{{ route('admins.index') }}" class="nav-link">
+                    <i class="fas fa-user-astronaut"></i><span>Admins</span>
+                </a>
+            </li>
             <li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}" class="nav-link">
                     <i class="fas fa-users"></i><span>Users</span>
@@ -139,6 +144,20 @@
             <li class="nav-item {{ request()->is('events*') ? 'active' : '' }}">
                 <a href="{{ route('events.index') }}" class="nav-link">
                     <i class="fas fa-calendar-plus"></i> <span>Events</span>
+                </a>
+            </li>
+
+            <li class="menu-header">Email List</li>
+            <li class="nav-item {{ request()->is('newsletters*') ? 'active' : '' }}">
+                <a href="{{ route('newsletters.index') }}" class="nav-link">
+                    <i class="fas fa-envelope-square"></i> <span>Newsletters</span>
+                </a>
+            </li>
+
+            <li class="menu-header">Stats</li>
+            <li class="nav-item {{ request()->is('admin/stats*') ? 'active' : '' }}">
+                <a href="{{ route('stats.index') }}" class="nav-link">
+                    <i class="fas fa-chart-bar"></i> <span>Stats</span>
                 </a>
             </li>
 

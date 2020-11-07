@@ -7,6 +7,7 @@ use App\Models\Countdown;
 use App\Models\NormalCoin;
 use App\Models\Post;
 use App\Models\SpecialCoin;
+use App\Models\Stat;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -18,18 +19,26 @@ class PagesController extends Controller
         $special_coins = SpecialCoin::all();
         $normal_coins = NormalCoin::all();
         $timer = Countdown::first();
+        $stat = Stat::first();
 
         return view('home-page', [
             'title'         => $title,
             'posts'         => $posts,
             'special_coins' => $special_coins,
             'normal_coins'  => $normal_coins,
-            'timer'         => $timer
+            'timer'         => $timer,
+            'stat'          => $stat
         ]);
     }
 
     public function masternodes() {
+        $title = "MPP - Masternodes";
+        $normal_coins = NormalCoin::all();
 
+        return view('masternodes-page', [
+            'title'        => $title,
+            'normal_coins' => $normal_coins
+        ]);
     }
 
     public function transactions() {

@@ -1,7 +1,10 @@
 <!-- ================================
         START HEADER AREA
 ================================= -->
-<header class="header-area">
+<header class="header-area
+@if(isset($exception) && $exception->getStatusCode() == 404)
+    error-menu-area
+@endif">
     <div class="header-menu-wrapper">
         <div class="container">
             <div class="row header-menu-row">
