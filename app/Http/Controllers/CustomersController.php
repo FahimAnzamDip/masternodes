@@ -67,7 +67,7 @@ class CustomersController extends Controller
     public function locationSubmit(Request $request) {
         $request->validate([
             'location_file_type' => 'required',
-            'location_file'      => 'required|image|mimes:jpeg,jpg,png|size:2048'
+            'location_file'      => 'required|image|mimes:jpeg,jpg,png|max:16000'
         ]);
 
         $customer = Customer::updateOrCreate(
@@ -101,7 +101,7 @@ class CustomersController extends Controller
     public function accountSubmit(Request $request) {
         $request->validate([
             'verify_code'    => 'required',
-            'customer_image' => 'required|image|mimes:jpeg,jpg,png|size:2048'
+            'customer_image' => 'required|image|mimes:jpeg,jpg,png|max:16000'
         ]);
 
         $customer = Customer::updateOrCreate(
