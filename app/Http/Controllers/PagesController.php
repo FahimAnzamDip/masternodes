@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactPage;
 use App\Models\Countdown;
 use App\Models\NormalCoin;
+use App\Models\PageView;
 use App\Models\Post;
 use App\Models\SpecialCoin;
 use App\Models\Stat;
@@ -21,6 +22,8 @@ class PagesController extends Controller
         $timer = Countdown::first();
         $stat = Stat::first();
 
+        PageView::first()->increment('views');
+
         return view('home-page', [
             'title'         => $title,
             'posts'         => $posts,
@@ -35,6 +38,8 @@ class PagesController extends Controller
         $title = "MPP - Masternodes";
         $normal_coins = NormalCoin::all();
 
+        PageView::first()->increment('views');
+
         return view('masternodes-page', [
             'title'        => $title,
             'normal_coins' => $normal_coins
@@ -44,6 +49,8 @@ class PagesController extends Controller
     public function transactions() {
         $title = "MPP - Transactions";
 
+        PageView::first()->increment('views');
+
         return view('transactions-page', [
             'title' => $title
         ]);
@@ -51,6 +58,8 @@ class PagesController extends Controller
 
     public function about() {
         $title = "MPP - About";
+
+        PageView::first()->increment('views');
 
         return view('about-page', [
             'title' => $title
@@ -60,6 +69,8 @@ class PagesController extends Controller
     public function contact() {
         $title = "MPP - Contact";
         $contact = ContactPage::first();
+
+        PageView::first()->increment('views');
 
         return view('contact-page', [
             'title'   => $title,
@@ -75,6 +86,8 @@ class PagesController extends Controller
         } else {
             $posts = Post::where('post_status', 1)->latest()->paginate(6);
         }
+
+        PageView::first()->increment('views');
 
         return view('blog-page', [
             'title' => $title,

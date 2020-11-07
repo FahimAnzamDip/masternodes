@@ -98,6 +98,11 @@
                         <li><a href="#">Apply for IEO</a></li>
                         <li><a href="#">Listing Coins</a></li>
                         <li><a href="#">Partnership</a></li>
+                        <li class="mt-4">
+                            <span class="badge badge-primary" style="padding: 15px 20px;background-color: #283A5E;">
+                                <p class="my-0" style="font-size: 14px; font-weight: normal">Total Page Views: {{ \App\Models\PageView::first()->views }}</p>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 <!-- end footer-shared -->

@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(CountdownSeeder::class);
         $this->call(ContactPageSeeder::class);
+        $this->call(PageViewSeeder::class);
+        $this->call(StatsSeeder::class);
     }
 }
