@@ -23,22 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="857608be-2114-4af8-9c98-f0d754415637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/show-users.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/masternodes-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/masternodes-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/fact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/fact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page-sections/newsletter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page-sections/newsletter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NormalCoinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NormalCoinsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecialCoinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecialCoinsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +329,7 @@
       <workItem from="1604476589106" duration="36193000" />
       <workItem from="1604561325905" duration="34991000" />
       <workItem from="1604642344502" duration="45293000" />
-      <workItem from="1604733143868" duration="13956000" />
+      <workItem from="1604733143868" duration="14871000" />
     </task>
     <servers />
   </component>
