@@ -29,7 +29,8 @@ class ChatsController extends Controller
 
         if (Auth::user()->role == 1) {
             $users = User::where('role', 2)->latest()->get();
-        } else {
+        }
+        else {
             $users = User::where('role', 1)->latest()->get();
         }
 
