@@ -51,7 +51,7 @@ class NormalCoinsController extends Controller
             'coin_name' => 'required',
             'coin_short_name' => 'required',
             'coin_link' => 'required',
-            'coin_image' => 'required|image|mimes:jpg,jpeg,png|max:1024'
+            'coin_image' => 'required|image|mimes:jpg,jpeg,png|size:1024'
         ]);
 
         $coin_id = NormalCoin::insertGetId([
@@ -105,7 +105,7 @@ class NormalCoinsController extends Controller
             'coin_name' => 'required',
             'coin_short_name' => 'required',
             'coin_link' => 'required',
-            'coin_image' => 'nullable|image|mimes:jpg,jpeg,png|max:1024'
+            'coin_image' => 'nullable|image|mimes:jpg,jpeg,png|size:1024'
         ]);
 
         if ($request->hasFile('coin_image')) {
